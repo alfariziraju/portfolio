@@ -1,3 +1,13 @@
+# Repository Guidelines & Rules
+
+## 🚫 ATURAN UTAMA: DILARANG KERAS MENGGUNAKAN ICON PULSE / DOT STATUS
+
+- **Dilarang keras memakai icon pulse baik yang kelap-kelip (`animate-pulse`) maupun tidak (statis).**
+- **Tidak boleh ada elemen dot/lingkaran status** (seperti `<span className="... rounded-full bg-emerald-400 ..."></span>` atau titik hijau/putih status *Available for work*, *Active*, dsb).
+- Gunakan teks tipografi bersih atau badge teks murni (contoh: `[AVAILABLE FOR WORK]`, `STATUS: ACTIVE`, `STATUS: OPTIMAL`) tanpa ornamen titik bulat atau efek denyut/blinking.
+
+---
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

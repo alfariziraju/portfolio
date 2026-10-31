@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Portofolio Web Fullstack (Next.js + Tailwind CSS + Admin Portal)
 
-## Getting Started
+Portofolio web modern, responsif, dan performan tinggi yang menyatukan:
+1. **Frontend (Halaman Publik)**: Showcase proyek, filter kategori, profil, riwayat karier, tech stack, dan formulir kontak interaktif.
+2. **Backend (REST API Routes)**: Endpoint publik (`/api/portfolio`, `/api/contact`) dan endpoint admin terproteksi.
+3. **Admin Portal (`/admin`)**: Dashboard visual berbasis web untuk mengelola seluruh data portofolio tanpa menyentuh kode, lengkap dengan autentikasi aman dan fitur **Git-Based Auto-Deploy**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📁 Struktur Proyek
+
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── admin/
+│   │   │   ├── page.js              # [Admin] Dashboard CRUD Portofolio
+│   │   │   └── login/page.js        # [Admin] Halaman Login
+│   │   ├── api/
+│   │   │   ├── admin/
+│   │   │   │   ├── auth/            # [Backend] Login, Logout, Session check
+│   │   │   │   └── data/route.js    # [Backend] GET & PUT data portofolio
+│   │   │   ├── contact/route.js     # [Backend] POST Form Kontak
+│   │   │   └── portfolio/route.js   # [Backend] GET Data Portofolio
+│   │   ├── globals.css              # Styling Tailwind & Dark theme
+│   │   ├── layout.js                # Root layout & SEO Metadata
+│   │   └── page.js                  # Halaman utama portofolio publik
+│   ├── components/
+│   │   ├── Navbar.jsx               # Header & drawer menu mobile
+│   │   ├── Hero.jsx                 # Headline, CTA, Social links
+│   │   ├── About.jsx                # Profil naratif & statistik
+│   │   ├── Projects.jsx             # Showcase proyek + filter kategori
+│   │   ├── Skills.jsx               # Tech stack per kategori
+│   │   ├── Experience.jsx           # Timeline riwayat kerja
+│   │   ├── Contact.jsx              # Form kontak interaktif
+│   │   ├── Footer.jsx               # Footer & back to top
+│   │   └── Icons.jsx                # Ikon SVG GitHub & LinkedIn
+│   ├── lib/
+│   │   ├── auth.js                  # Manajemen session cookie admin
+│   │   └── storage.js               # Penyimpanan lokal & Git Auto-Commit
+│   └── data/
+│       ├── portfolio.json           # Data profil, skill, proyek, dan karier
+│       └── inbox.json               # Penyimpanan pesan formulir kontak
+├── .env.example                     # Panduan variabel lingkungan
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Cara Menjalankan Secara Lokal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Masuk ke direktori
+```bash
+cd portfolio
+```
 
-## Learn More
+### 2. Jalankan server development
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+- **Halaman Utama Portofolio**: [http://localhost:3000](http://localhost:3000)
+- **Halaman Admin Portal**: [http://localhost:3000/admin](http://localhost:3000/admin)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔐 Kredensial Login Admin
 
-## Deploy on Vercel
+Secara default, kredensial login adalah:
+- **Username**: `admin`
+- **Password**: `admin123`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*(Anda dapat mengubah kredensial ini kapan saja di file `.env.local`)*.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚡ Fitur Admin Portal (`/admin`)
+
+- **Tab Profil & Bio**: Ubah nama, role, tagline, deskripsi bio, email, sosial media, dan toggle status badge *"Open for work"*.
+- **Tab Proyek Portofolio**: Tambah proyek baru, edit proyek yang sudah ada, tandai proyek sebagai *Featured*, serta hapus proyek.
+- **Tab Tech Stack & Skills**: Tambah keahlian baru ke kategori yang sesuai dan sesuaikan tingkat kemampuan (*Beginner*, *Intermediate*, *Advanced*).
+- **Tab Pesan Masuk (Inbox)**: Lihat semua pesan kontak yang dikirim oleh pengunjung web secara terorganisir.
+- **Backup JSON**: Unduh salinan data `portfolio.json` sewaktu-waktu dengan 1 klik.
+
+---
+
+## 🔄 Cara Kerja Git-Based Auto-Deploy (Vercel)
+
+1. Saat Anda mengedit data di **`/admin`** dan menekan tombol **"Simpan & Publish"**:
+   - Jika dijalankan di **lokal**: Langsung menyimpan ke file `src/data/portfolio.json`.
+   - Jika dikonfigurasi dengan `GITHUB_TOKEN`: Sistem otomatis membuat commit ke repository GitHub Anda via GitHub API.
+2. Commit tersebut langsung memicu **Vercel Auto-Deploy**, sehingga web publik terupdate secara otomatis dalam hitungan detik tanpa perlu sewa server database terpisah!
