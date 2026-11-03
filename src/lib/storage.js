@@ -53,7 +53,7 @@ export async function savePortfolioData(newData) {
           "User-Agent": "Portfolio-Admin-CMS",
         },
         body: JSON.stringify({
-          message: `chore: update portfolio data via Admin Portal [skip ci]`,
+          message: `chore: update portfolio data via Admin Portal`,
           content: contentBase64,
           sha: currentSha || undefined,
           branch,
