@@ -3,7 +3,7 @@
     "name": "Radju Alfarizi Amahala",
     "role": "Software Developer",
     "tagline": "Membangun sistem web nyata yang andal, aman, dan efisien untuk operasional institusi dan bisnis.",
-    "about": "Lulusan Teknik Informatika Universitas Semarang yang berfokus membangun sistem perangkat lunak yang benar-benar digunakan untuk kebutuhan operasional harian. Terbiasa terlibat langsung dalam proyek nyata di sekolah dan perusahaan, mulai dari identifikasi kebutuhan pengguna, perancangan arsitektur, implementasi fitur, hingga pemeliharaan sistem yang aman dan stabil.",
+    "about": "Bagi saya, menulis kode bukan sekadar merangkai logika, melainkan cara mempermudah pekerjaan orang lain. Ada kepuasan tersendiri ketika alur kerja manual yang sebelumnya rumit bisa berubah menjadi sistem digital yang otomatis dan rapi. Berpengalaman membangun sistem di lingkungan nyata: mulai dari integrasi perbankan Host-to-Host (H2H) di MAN 1 Kota Semarang, alur operasional proyek di CV Nastiti Utama Mandiri, ERP manufaktur berbasis PWA, hingga platform web interaktif modern.",
     "location": "Semarang, Indonesia",
     "email": "radjualfarizi88@gmail.com",
     "phone": "085801234186",
@@ -12,8 +12,8 @@
     "resumeUrl": "#",
     "isAvailable": true,
     "stats": [
-      { "label": "Proyek Produksi", "value": "6+" },
-      { "label": "Integrasi Institusi", "value": "Bank BSN" },
+      { "label": "Proyek Produksi", "value": "8+" },
+      { "label": "Integrasi Institusi", "value": "Banking H2H" },
       { "label": "Tingkat Keandalan", "value": "99.9%" }
     ]
   },
@@ -26,7 +26,8 @@
     }
   ],
   "certifications": [
-    { "name": "RevoU Software Engineering Fundamental", "year": "2023" },
+    { "name": "RevoU Software Engineering Fundamental (SEFC)", "year": "2024" },
+    { "name": "DevCoach 145: Front-End Web Components with Lit (Dicoding)", "year": "2024" },
     { "name": "CCNA Introduction to Networks (Cisco)", "year": "2023" },
     { "name": "32h Business English Certification", "year": "2023" }
   ],
@@ -35,8 +36,8 @@
       "category": "Backend & System Engineering",
       "items": [
         { "name": "PHP & Laravel", "level": "Advanced" },
-        { "name": "Node.js & Express", "level": "Advanced" },
-        { "name": "Payment Gateway & Webhook", "level": "Advanced" },
+        { "name": "Host-to-Host (H2H) Banking API", "level": "Advanced" },
+        { "name": "Payment Gateway & Webhooks", "level": "Advanced" },
         { "name": "SQL & Relational Database", "level": "Advanced" },
         { "name": "RESTful API Design", "level": "Advanced" }
       ]
@@ -44,35 +45,79 @@
     {
       "category": "Frontend & Mobile Web",
       "items": [
-        { "name": "React.js", "level": "Advanced" },
-        { "name": "Next.js (App Router)", "level": "Advanced" },
+        { "name": "React.js & Next.js", "level": "Advanced" },
+        { "name": "Vue.js & Inertia.js", "level": "Advanced" },
         { "name": "Tailwind CSS", "level": "Advanced" },
-        { "name": "PWA & Offline Queue", "level": "Intermediate" },
-        { "name": "Figma & UI Prototyping", "level": "Intermediate" }
+        { "name": "PWA & Offline Queue", "level": "Advanced" },
+        { "name": "Three.js & GSAP Animations", "level": "Intermediate" }
       ]
     },
     {
       "category": "DevOps, Security & Tools",
       "items": [
+        { "name": "Git & GitHub CI/CD Actions", "level": "Advanced" },
         { "name": "Cron Job & Backup Automation", "level": "Advanced" },
         { "name": "Role-Based Access Control (RBAC)", "level": "Advanced" },
-        { "name": "Git & GitHub CI/CD", "level": "Advanced" },
-        { "name": "Telegram Webhook & Alerts", "level": "Intermediate" },
-        { "name": "AI Tools & Prompt Engineering", "level": "Advanced" }
+        { "name": "Playwright (E2E Testing)", "level": "Advanced" },
+        { "name": "Linux Server / VPS Deployment", "level": "Advanced" }
       ]
     }
   ],
   "projects": [
     {
-      "id": "payment-gateway-syahriyah-bsn",
-      "title": "Payment Gateway VA Syahriyah (Bank BSN Integration)",
+      "id": "payment-gateway-syahriyah-h2h",
+      "title": "Payment Gateway Virtual Account (Banking H2H Integration)",
       "category": "Backend",
-      "description": "Sistem digitalisasi pembayaran Syahriyah terintegrasi Bank BSN via Virtual Account. Membangun service BSN, webhook receiver, dan pencatatan jurnal otomatis lengkap dengan pengaman anti-double payment dan simulasi pengujian VA.",
-      "tags": ["PHP", "Laravel", "Payment Gateway", "Webhook", "Bank BSN", "SQL"],
+      "description": "Sistem digitalisasi pembayaran tagihan terintegrasi langsung dengan Bank Mitra via Virtual Account Host-to-Host (H2H). Membangun webhook receiver dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis, dan pemantauan status pelunasan real-time via Server-Sent Events (SSE).",
+      "tags": ["PHP", "Laravel", "Payment Gateway", "H2H Banking", "Webhook Security", "SSE", "SQL"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
-      "stats": "Anti-double Payment Guard & Auto Journal Sync"
+      "stats": "H2H Virtual Account & Instant Settlement SSE"
+    },
+    {
+      "id": "acrylico-manufacturing-erp",
+      "title": "Acrylico ERP — Manufacturing & Shop Floor Management",
+      "category": "Fullstack",
+      "description": "Sistem ERP manufaktur fabrikasi akrilik dan signage dengan portal karyawan PWA offline-first (absensi GPS geofencing & selfie biometrik), otomasi payroll & kasbon berjenjang, pelacakan lantai kerja real-time via WebSocket (Laravel Reverb), dan pengujian otomatis Playwright.",
+      "tags": ["Laravel", "Vue.js", "Inertia.js", "PWA", "WebSockets", "Playwright", "MySQL"],
+      "demoUrl": "https://github.com/alfariziraju",
+      "repoUrl": "https://github.com/alfariziraju",
+      "isFeatured": true,
+      "stats": "PWA Offline-First & Live Shop Floor WebSocket"
+    },
+    {
+      "id": "project-pricing-erp-workflow",
+      "title": "Project Operations & Smart Pricing ERP (CV Nastiti Utama Mandiri)",
+      "category": "Fullstack",
+      "description": "Platform manajemen operasional alur order bisnis dengan Bill of Quantities (BQ) dinamis, kalkulator harga otomatis dan estimasi margin laba bersih proyek, penagihan klien terpadu (BAPP & invoice termin), dan hak akses multi-divisi (RBAC).",
+      "tags": ["Laravel", "React.js", "Inertia.js", "Dynamic BQ", "Margin Financial", "RBAC", "SQL"],
+      "demoUrl": "https://github.com/alfariziraju",
+      "repoUrl": "https://github.com/alfariziraju",
+      "isFeatured": true,
+      "stats": "Dynamic BQ & Realtime Project Net Margin"
+    },
+    {
+      "id": "field-survey-gps-pwa",
+      "title": "Field Survey PWA with GPS Watermark & Live Sheets Sync",
+      "category": "Frontend",
+      "description": "Aplikasi Progressive Web App (PWA) untuk petugas lapangan: formulir dinamis terhubung real-time ke Google Sheets API serta fitur upload foto ber-watermark koordinat GPS & timestamp dengan optimasi Blob untuk iOS Safari dan antrean offline otomatis.",
+      "tags": ["React.js", "PWA", "Google Sheets API", "GPS Watermark", "Offline Queue"],
+      "demoUrl": "https://github.com/alfariziraju",
+      "repoUrl": "https://github.com/alfariziraju",
+      "isFeatured": true,
+      "stats": "Offline Sync & Real-Time Google Sheets API"
+    },
+    {
+      "id": "nata-code-studio-platform",
+      "title": "Nata Code — Creative Agency & Interactive 3D Web",
+      "category": "Frontend",
+      "description": "Platform digital studio software house dan desain sistem modular berstandar agensi internasional dengan smooth scrolling (Locomotive Scroll), elemen visual interaktif 3D berbasis Three.js, dan animasi performa tinggi GSAP.",
+      "tags": ["React.js", "Laravel", "Inertia.js", "Three.js", "GSAP", "Locomotive Scroll", "Tailwind CSS"],
+      "demoUrl": "https://github.com/alfariziraju",
+      "repoUrl": "https://github.com/alfariziraju",
+      "isFeatured": true,
+      "stats": "Interactive 3D Three.js & Locomotive Scroll"
     },
     {
       "id": "sistem-keuangan-bku-madrasah",
@@ -82,34 +127,12 @@
       "tags": ["Laravel", "React.js", "SQL", "PDF Export", "Excel Export", "Audit Trail"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": true,
+      "isFeatured": false,
       "stats": "Laporan BKU Detail-Summary PDF/Excel"
     },
     {
-      "id": "project-pricing-erp-workflow",
-      "title": "Project Business Workflow & Smart Pricing ERP",
-      "category": "Fullstack",
-      "description": "Sistem ERP alur order bisnis terpadu dengan Bill of Quantities (BQ) dinamis, kalkulator smart pricing otomatis, monitoring margin keuangan proyek, dan export rekap Excel untuk manajemen operasional.",
-      "tags": ["Laravel", "React.js", "Smart Pricing", "Dynamic BQ", "SQL", "Excel Export"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": true,
-      "stats": "Dynamic BQ & Realtime Project Margin"
-    },
-    {
-      "id": "field-survey-gps-pwa",
-      "title": "Field Survey PWA with GPS Watermark & Offline Queue",
-      "category": "Frontend",
-      "description": "Aplikasi Progressive Web App (PWA) untuk petugas lapangan: formulir dinamis terhubung real-time ke Google Sheets API serta fitur upload foto ber-watermark koordinat GPS & timestamp dengan antrean offline otomatis.",
-      "tags": ["React.js", "PWA", "Google Sheets API", "GPS Watermark", "Offline Queue"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": true,
-      "stats": "Offline Sync & Live GPS Watermark Camera"
-    },
-    {
       "id": "invoicing-legal-docs",
-      "title": "Invoicing & Legal Document System",
+      "title": "Invoicing & Legal Document System (BAPP)",
       "category": "Backend",
       "description": "Modul integrasi penagihan resmi yang menyatukan invoice client, nomor NPWP, Berita Acara Penerimaan Pekerjaan (BAPP), dan pembuatan berkas PDF resmi ke dalam alur order proyek.",
       "tags": ["PHP", "Laravel", "PDF Generator", "Tax & NPWP", "BAPP"],
@@ -120,28 +143,40 @@
     },
     {
       "id": "school-data-automation",
-      "title": "Academic Data Automation Engine",
+      "title": "Academic Data & Backup Automation Engine",
       "category": "Backend",
-      "description": "Engine otomasi data sekolah terpadu yang menangani dashboard tagihan terpusat, import massal berbasis spreadsheet, pemrosesan kenaikan kelas otomatis, serta modul mutasi siswa tanpa input manual.",
-      "tags": ["Laravel", "Automation Engine", "Cron Jobs", "SQL", "Batch Processing"],
+      "description": "Engine otomasi data sekolah dan infrastruktur: dashboard tagihan terpusat, import massal Excel/Word, kenaikan kelas otomatis, CI/CD GitHub Actions, serta backup harian database otomatis via crontab dan Telegram bot.",
+      "tags": ["Laravel", "GitHub Actions CI/CD", "Cron Jobs", "Telegram Alerts", "Batch Processing"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": false,
-      "stats": "Batch Import & Kenaikan Kelas Otomatis"
+      "stats": "CI/CD GitHub Actions & Telegram Backup Alerts"
     }
   ],
   "experiences": [
     {
-      "role": "Software Developer",
+      "role": "Full Stack Web Developer",
       "company": "CV NASTITI UTAMA MANDIRI",
       "period": "Jan 2026 – Jun 2026",
-      "description": "Mengembangkan alur order bisnis & keuangan dengan BQ dinamis dan smart pricing, integrasi invoicing & dokumen legal (NPWP, BAPP, PDF export), aplikasi PWA survei lapangan berfitur GPS watermark & offline queue, serta manajemen hak akses granular."
+      "description": "Membangun alur bisnis inti dan operasional proyek secara end-to-end: pengelolaan siklus pesanan, penugasan tim lapangan (SPG/Field Officers), formulir digital staf lapangan yang tersinkronisasi real-time ke Google Sheets, kalkulasi penawaran biaya (BQ) dan estimasi margin laba bersih proyek, penagihan klien terpadu (faktur & BAPP), serta pembagian hak akses pengguna multi-divisi (RBAC)."
     },
     {
-      "role": "Software Developer",
+      "role": "Backend / Web Developer",
       "company": "MAN 1 KOTA SEMARANG",
       "period": "Mar 2025 – Jul 2025",
-      "description": "Membangun integrasi Virtual Account Bank BSN untuk digitalisasi Syahriyah dengan webhook dan jurnal otomatis, sistem keuangan & BKU dengan export PDF/Excel kronologis, otomasi import data & kenaikan kelas massal, serta backup otomatis harian via cron dan Telegram bot."
+      "description": "Merancang dan membangun sistem informasi manajemen keuangan dan billing sekolah: integrasi Virtual Account dengan Bank Mitra (Host-to-Host & webhook) dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis (auto-journaling), pelaporan Buku Kas Umum (BKU) ekspor PDF/Excel, otomasi impor data massal siswa/soal ujian, serta otomatisasi deployment CI/CD GitHub Actions dan backup database via Telegram."
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "NATACODE (ACRYLICO ERP)",
+      "period": "Agu 2024 – Feb 2025",
+      "description": "Memimpin rancang bangun sistem ERP Manufaktur dan Realtime Shop Floor Tracking untuk workshop fabrikasi akrilik dan signage: portal karyawan PWA offline-first dengan absensi GPS geofencing radius akurat & verifikasi selfie biometrik, otomasi penggajian berjenjang & kasbon, pelacakan progres produksi secara langsung via WebSocket (Laravel Reverb), dan pengujian otomatis End-to-End dengan Playwright."
+    },
+    {
+      "role": "Full Stack Developer / Creative Frontend",
+      "company": "NATA CODE STUDIO",
+      "period": "2024 – Present",
+      "description": "Merancang dan membangun platform digital resmi serta arsitektur sistem desain untuk studio software house: antarmuka interaktif modern dengan visual 3D (Three.js), smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi responsif menggunakan GSAP, arsitektur komponen reusable (React 18, Radix UI, Tailwind CSS), dan backend Laravel SPA via Inertia.js."
     }
   ]
 }
