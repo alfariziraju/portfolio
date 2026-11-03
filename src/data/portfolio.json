@@ -155,8 +155,8 @@
   ],
   "experiences": [
     {
-      "role": "Full Stack Developer / Creative Frontend",
-      "company": "NATA CODE STUDIO",
+      "role": "Full Stack Developer",
+      "company": "NATA CODE",
       "period": "Jul 2026 – Sekarang",
       "description": "Merancang dan membangun platform digital resmi serta arsitektur sistem desain untuk studio software house: antarmuka interaktif modern dengan visual 3D (Three.js), smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi responsif menggunakan GSAP, arsitektur komponen reusable (React 18, Radix UI, Tailwind CSS), dan backend Laravel SPA via Inertia.js."
     },
