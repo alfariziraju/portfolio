@@ -79,26 +79,28 @@ export default function About({ profile }) {
             </div>
 
             {/* Metrics Counters Grid */}
-            <div className="pt-8 border-t border-[#242424] grid grid-cols-3 gap-6">
-              {profile?.stats?.map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ ...transition, delay: 0.3 + idx * 0.1 }}
-                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                  className="space-y-1 p-2 -m-2 rounded-xl transition-colors cursor-default"
-                >
-                  <div className="text-3xl sm:text-5xl font-semibold tracking-tighter text-white font-mono">
-                    {stat.value}
-                  </div>
-                  <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#8f8f8f]">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {profile?.stats && profile.stats.length > 0 && (
+              <div className="pt-8 border-t border-[#242424] grid grid-cols-3 gap-6">
+                {profile.stats.map((stat, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...transition, delay: 0.3 + idx * 0.1 }}
+                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                    className="space-y-1 p-2 -m-2 rounded-xl transition-colors cursor-default"
+                  >
+                    <div className="text-3xl sm:text-5xl font-semibold tracking-tighter text-white font-mono">
+                      {stat.value}
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#8f8f8f]">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
 
             {/* Editorial Link CTA */}
             <div className="pt-4">

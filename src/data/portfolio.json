@@ -10,12 +10,7 @@
     "github": "https://github.com/alfariziraju",
     "linkedin": "https://www.linkedin.com/in/radju-alfarizi-37b652437/",
     "resumeUrl": "#",
-    "isAvailable": true,
-    "stats": [
-      { "label": "Proyek Produksi", "value": "8+" },
-      { "label": "Integrasi Institusi", "value": "Banking H2H" },
-      { "label": "Tingkat Keandalan", "value": "99.9%" }
-    ]
+    "isAvailable": true
   },
   "education": [
     {
