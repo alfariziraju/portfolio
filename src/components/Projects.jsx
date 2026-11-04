@@ -152,6 +152,26 @@ export default function Projects({ initialProjects = [] }) {
                     {project.title}
                   </h3>
 
+                  {/* Optional Project Screenshot Preview with subtle hover effect */}
+                  {project.image && (
+                    <div className="my-5 overflow-hidden rounded-xl border border-[#242424] bg-[#141414] group/img">
+                      <div className="flex items-center gap-1.5 px-3.5 py-2 border-b border-[#242424] bg-[#1a1a1a]/80">
+                        <div className="w-2 h-2 rounded-full bg-[#333333]" />
+                        <div className="w-2 h-2 rounded-full bg-[#333333]" />
+                        <div className="w-2 h-2 rounded-full bg-[#333333]" />
+                        <span className="text-[10px] font-mono text-[#666] ml-2 truncate">system-preview.app</span>
+                      </div>
+                      <div className="relative aspect-[16/10] overflow-hidden bg-black/40">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover object-top opacity-90 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-[1.02]"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   {/* Description */}
                   <p className="text-sm text-[#a3a3a3] leading-relaxed mb-6 max-w-2xl">
                     {project.description}
