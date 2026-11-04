@@ -3,7 +3,7 @@
     "name": "Radju Alfarizi Amahala",
     "role": "Software Developer",
     "tagline": "Membangun sistem web nyata yang andal, aman, dan efisien untuk operasional institusi dan bisnis.",
-    "about": "Bagi saya, menulis kode bukan sekadar merangkai logika, melainkan cara mempermudah pekerjaan orang lain. Ada kepuasan tersendiri ketika alur kerja manual yang sebelumnya rumit bisa berubah menjadi sistem digital yang otomatis dan rapi. Berpengalaman membangun sistem di lingkungan nyata: mulai dari integrasi perbankan Host-to-Host (H2H) di MAN 1 Kota Semarang, alur operasional proyek di CV Nastiti Utama Mandiri, ERP manufaktur berbasis PWA, hingga platform web interaktif modern.",
+    "about": "Full Stack Web Developer yang berfokus menyederhanakan alur kerja kompleks menjadi sistem web yang otomatis, andal, dan efisien. Berpengalaman membangun solusi kelas enterprise secara end-to-end: integrasi Host-to-Host perbankan syariah, ERP manufaktur berbasis PWA, hingga platform operasional proyek terpadu.",
     "location": "Semarang, Indonesia",
     "email": "radjualfarizi88@gmail.com",
     "phone": "085801234186",
@@ -153,25 +153,25 @@
       "role": "Full Stack Developer",
       "company": "NATA CODE",
       "period": "Jul 2026 – Sekarang",
-      "description": "Merancang dan membangun platform digital resmi serta arsitektur sistem desain untuk studio software house: antarmuka interaktif modern dengan visual 3D (Three.js), smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi responsif menggunakan GSAP, arsitektur komponen reusable (React 18, Radix UI, Tailwind CSS), dan backend Laravel SPA via Inertia.js."
+      "description": "Merancang dan membangun platform digital resmi serta arsitektur sistem desain untuk studio software house & SaaS: antarmuka web interaktif dengan smooth scrolling (Locomotive Scroll), visual 3D (Three.js), animasi responsif dengan GSAP dan Framer Motion, pustaka komponen reusable (React 18, Radix UI, Tailwind CSS), serta integrasi backend Laravel SPA via Inertia.js."
     },
     {
       "role": "Full Stack Developer",
       "company": "NATACODE (ACRYLICO ERP)",
       "period": "Agu 2026 – Nov 2026",
-      "description": "Memimpin rancang bangun sistem ERP Manufaktur dan Realtime Shop Floor Tracking untuk workshop fabrikasi akrilik dan signage: portal karyawan PWA offline-first dengan absensi GPS geofencing radius akurat & verifikasi selfie biometrik, otomasi penggajian berjenjang & kasbon, pelacakan progres produksi secara langsung via WebSocket (Laravel Reverb), dan pengujian otomatis End-to-End dengan Playwright."
+      "description": "Memimpin rancang bangun sistem ERP Manufaktur dan Realtime Shop Floor Tracking khusus industri fabrikasi akrilik dan signage: portal karyawan PWA offline-first (absensi GPS geofencing & selfie biometrik), otomasi penggajian berjenjang, kasbon & slip gaji otomatis via WhatsApp/PDF, pemantauan lantai produksi real-time via WebSocket (Laravel Reverb), serta pengujian E2E otomatis Playwright."
     },
     {
       "role": "Full Stack Web Developer",
       "company": "CV NASTITI UTAMA MANDIRI",
       "period": "Jan 2026 – Jul 2026",
-      "description": "Membangun alur bisnis inti dan operasional proyek secara end-to-end: pengelolaan siklus pesanan, penugasan tim lapangan (SPG/Field Officers), formulir digital staf lapangan yang tersinkronisasi real-time ke Google Sheets, kalkulasi penawaran biaya (BQ) dan estimasi margin laba bersih proyek, penagihan klien terpadu (faktur & BAPP), serta pembagian hak akses pengguna multi-divisi (RBAC)."
+      "description": "Membangun alur bisnis inti dan operasional proyek secara end-to-end: pengelolaan siklus pesanan, penugasan tim lapangan (SPG/Field Officers) dengan laporan foto ber-watermark GPS & timestamp, formulir digital staf lapangan yang tersinkronisasi real-time ke Google Sheets via background queue, kalkulator BQ dinamis & margin laba bersih proyek, penagihan klien terpadu (faktur & BAPP), serta RBAC multi-divisi."
     },
     {
       "role": "Backend / Web Developer",
       "company": "MAN 1 KOTA SEMARANG",
       "period": "Mar 2025 – Agu 2026",
-      "description": "Merancang dan membangun sistem informasi manajemen keuangan dan billing sekolah: integrasi Virtual Account dengan Bank Mitra (Host-to-Host & webhook) dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis (auto-journaling), pelaporan Buku Kas Umum (BKU) ekspor PDF/Excel, otomasi impor data massal siswa/soal ujian, serta otomatisasi deployment CI/CD GitHub Actions dan backup database via Telegram."
+      "description": "Merancang dan membangun sistem informasi manajemen keuangan dan billing sekolah end-to-end: integrasi Virtual Account Bank Mitra (Host-to-Host & webhook) dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis (auto-journaling), persetujuan anggaran RKA bulanan, pelaporan Buku Kas Umum (BKU) ekspor PDF/Excel, otomasi impor data massal, serta pipeline CI/CD GitHub Actions dan backup database via Telegram bot."
     }
   ]
 }
