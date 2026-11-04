@@ -63,7 +63,28 @@
       "id": "payment-gateway-syahriyah-h2h",
       "title": "Payment Gateway Virtual Account (Banking H2H Integration)",
       "category": "Backend",
-      "image": "/images/projects/keuanganman/staffkeuangan-dashboard.png",
+      "images": [
+        {
+          "url": "/images/projects/keuanganman/staffkeuangan-dashboard.png",
+          "caption": "Dashboard Monitoring Keuangan & Pos Dana"
+        },
+        {
+          "url": "/images/projects/keuanganman/tagihan-siswa-va-clean.png",
+          "caption": "Manajemen Tagihan & Settlement H2H Virtual Account"
+        },
+        {
+          "url": "/images/projects/keuanganman/buku-kas-umum-clean.png",
+          "caption": "Buku Kas Umum (BKU) & Auto-Journaling Akuntansi"
+        },
+        {
+          "url": "/images/projects/keuanganman/hero-landing.png",
+          "caption": "Landing Page Portal Resmi Keuangan Siswa"
+        },
+        {
+          "url": "/images/projects/keuanganman/student-tagihan-bento.png",
+          "caption": "Portal Bento Siswa & Pembayaran Tagihan Online"
+        }
+      ],
       "description": "Sistem digitalisasi pembayaran tagihan terintegrasi langsung dengan Bank Mitra via Virtual Account Host-to-Host (H2H). Membangun webhook receiver dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis, dan pemantauan status pelunasan real-time via Server-Sent Events (SSE).",
       "tags": ["PHP", "Laravel", "Payment Gateway", "H2H Banking", "Webhook Security", "SSE", "SQL"],
       "demoUrl": "https://github.com/alfariziraju",
