@@ -61,8 +61,8 @@ export default function ProjectImageSlider({ images = [], title = "" }) {
         )}
       </div>
 
-      {/* Screenshot Frame with Navigation Overlays */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-black/50 select-none">
+      {/* Screenshot Frame with Navigation Overlays - Compact & Cinematic Height */}
+      <div className="relative aspect-[16/9] sm:aspect-[21/9] max-h-[340px] overflow-hidden bg-black/60 select-none">
         <img
           key={current.url}
           src={current.url}
