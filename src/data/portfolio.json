@@ -60,9 +60,9 @@
   ],
   "projects": [
     {
-      "id": "payment-gateway-syahriyah-h2h",
-      "title": "Payment Gateway Virtual Account (Banking H2H Integration)",
-      "category": "Backend",
+      "id": "sim-keuangan-man-h2h",
+      "title": "SIM Keuangan Madrasah — School Financial ERP & Banking H2H Integration",
+      "category": "Fullstack",
       "images": [
         {
           "url": "/images/projects/keuanganman/staffkeuangan-dashboard.png",
