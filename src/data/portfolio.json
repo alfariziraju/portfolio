@@ -160,50 +160,6 @@
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
       "stats": "Interactive 3D Three.js & Locomotive Scroll"
-    },
-    {
-      "id": "field-survey-gps-pwa",
-      "title": "Field Survey PWA with GPS Watermark & Live Sheets Sync",
-      "category": "Frontend",
-      "description": "Aplikasi Progressive Web App (PWA) untuk petugas lapangan: formulir dinamis terhubung real-time ke Google Sheets API serta fitur upload foto ber-watermark koordinat GPS & timestamp dengan optimasi Blob untuk iOS Safari dan antrean offline otomatis.",
-      "tags": ["React.js", "PWA", "Google Sheets API", "GPS Watermark", "Offline Queue"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": false,
-      "stats": "Offline Sync & Real-Time Google Sheets API"
-    },
-    {
-      "id": "sistem-keuangan-bku-madrasah",
-      "title": "Sistem Keuangan & Buku Kas Umum (BKU)",
-      "category": "Fullstack",
-      "description": "Platform pengelolaan kas dan Buku Kas Umum (BKU) dengan rekonsiliasi pemasukan/pengeluaran realtime, modul laporan BKU detail-summary PDF/Excel berstandar akuntansi, serta penataan tagihan kronologis terstruktur.",
-      "tags": ["Laravel", "React.js", "SQL", "PDF Export", "Excel Export", "Audit Trail"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": false,
-      "stats": "Laporan BKU Detail-Summary PDF/Excel"
-    },
-    {
-      "id": "invoicing-legal-docs",
-      "title": "Invoicing & Legal Document System (BAPP)",
-      "category": "Backend",
-      "description": "Modul integrasi penagihan resmi yang menyatukan invoice client, nomor NPWP, Berita Acara Penerimaan Pekerjaan (BAPP), dan pembuatan berkas PDF resmi ke dalam alur order proyek.",
-      "tags": ["PHP", "Laravel", "PDF Generator", "Tax & NPWP", "BAPP"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": false,
-      "stats": "BAPP, NPWP & Official PDF Document Flow"
-    },
-    {
-      "id": "school-data-automation",
-      "title": "Academic Data & Backup Automation Engine",
-      "category": "Backend",
-      "description": "Engine otomasi data sekolah dan infrastruktur: dashboard tagihan terpusat, import massal Excel/Word, kenaikan kelas otomatis, CI/CD GitHub Actions, serta backup harian database otomatis via crontab dan Telegram bot.",
-      "tags": ["Laravel", "GitHub Actions CI/CD", "Cron Jobs", "Telegram Alerts", "Batch Processing"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": false,
-      "stats": "CI/CD GitHub Actions & Telegram Backup Alerts"
     }
   ],
   "experiences": [

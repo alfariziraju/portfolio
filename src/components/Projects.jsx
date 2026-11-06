@@ -180,33 +180,18 @@ export default function Projects({ initialProjects = [] }) {
                     />
                   )}
 
-                  {/* STAR Method Case Breakdown */}
+                  {/* Editorial Flow Narrative (Context -> Action -> Impact) */}
                   {project.star ? (
-                    <div className="my-5 space-y-2.5 text-xs font-mono border-y border-[#1c1c1c] py-4 bg-black/20 -mx-2 px-2 rounded-lg">
-                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
-                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-[#666] font-semibold">
-                          [SITUATION &amp; TASK]
-                        </span>
-                        <p className="sm:col-span-9 font-sans text-xs text-[#999] leading-relaxed">
-                          {project.star.situation} {project.star.task}
-                        </p>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
-                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-slate-300 font-semibold">
-                          [ACTION / ARCH]
-                        </span>
-                        <p className="sm:col-span-9 font-sans text-xs text-slate-300 leading-relaxed">
-                          {project.star.action}
-                        </p>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
-                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-emerald-400 font-semibold">
-                          [RESULT / IMPACT]
-                        </span>
-                        <p className="sm:col-span-9 font-sans text-xs text-emerald-100/90 leading-relaxed">
-                          {project.star.result}
-                        </p>
-                      </div>
+                    <div className="my-5 space-y-3 text-sm leading-relaxed border-t border-[#1f1f1f] pt-4">
+                      <p className="text-[#a3a3a3]">
+                        {project.star.situation} {project.star.task}
+                      </p>
+                      <p className="text-slate-300">
+                        {project.star.action}
+                      </p>
+                      <p className="text-emerald-300/90 font-medium">
+                        {project.star.result}
+                      </p>
                     </div>
                   ) : (
                     /* Default Description */
