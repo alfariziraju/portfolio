@@ -1,38 +1,58 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Skills({ skills = [] }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].skills;
+
   const capabilities = [
     {
       num: "01",
-      title: "Full Stack Web Engineering",
-      desc: "Pengembangan sistem digital skala penuh dari antarmuka pengguna responsif hingga logika bisnis backend menggunakan Next.js dan Node.js.",
-      stack: ["React.js", "Next.js App Router", "JavaScript ES6+", "Tailwind CSS"],
+      title: lang === "id" ? "Full Stack Enterprise Architecture" : "Full Stack Enterprise Architecture",
+      desc:
+        lang === "id"
+          ? "Rancang bangun aplikasi web bisnis end-to-end, menggabungkan arsitektur modular backend Laravel dengan kemudahan Single Page Application (SPA) berbasis React dan Vue (Inertia.js)."
+          : "End-to-end business web engineering, pairing robust modular Laravel backends with snappy Single Page Application (SPA) workflows via React and Vue (Inertia.js).",
+      stack: ["Laravel 11", "React 18", "Vue.js", "Inertia.js", "Tailwind CSS"],
     },
     {
       num: "02",
-      title: "Backend & RESTful API Architecture",
-      desc: "Merancang endpoint REST yang aman, terdokumentasi, dengan manajemen error terstandar, middleware autentikasi, dan validasi data ketat.",
-      stack: ["Node.js", "Express.js", "JWT Auth", "REST Best Practices"],
+      title: lang === "id" ? "Host-to-Host (H2H) Banking & Webhooks" : "Host-to-Host (H2H) Banking & Webhooks",
+      desc:
+        lang === "id"
+          ? "Integrasi langsung gateway perbankan (Virtual Account BTNS/Syariah) dengan keamanan bank-grade (IP whitelisting, signature HMAC, dan perlindungan anti-replay attack) serta Server-Sent Events (SSE)."
+          : "Direct institutional banking integrations (BTNS Virtual Account) featuring bank-grade security (IP whitelisting, HMAC signatures, anti-replay guards) and Server-Sent Events (SSE).",
+      stack: ["H2H Banking API", "Virtual Account", "Webhook Security", "SSE Live Stream"],
     },
     {
       num: "03",
-      title: "Database Modeling & ORM",
-      desc: "Struktur skema relasional yang teratur, migrasi database otomatis, serta query yang dioptimasi untuk performa baca/tulis cepat.",
-      stack: ["Prisma ORM", "SQLite", "PostgreSQL", "Data Integrity"],
+      title: lang === "id" ? "Relational Database Modeling & Akuntansi" : "Relational Database Modeling & Accounting",
+      desc:
+        lang === "id"
+          ? "Perancangan skema basis data relasional kompleks, transaksi database atomik (ACID), auto-journaling pembukuan Buku Kas Umum (BKU), dan rekonsiliasi kas."
+          : "Complex relational schema design, atomic ACID transactions, automated double-entry General Cash Book (BKU) journaling, and bank reconciliation.",
+      stack: ["MySQL", "Schema Indexing", "Double-Entry Bookkeeping", "Query Optimization"],
     },
     {
       num: "04",
-      title: "Performance & Responsive Styling",
-      desc: "Membangun tampilan web modern yang cepat dan adaptif di layar smartphone maupun monitor ultra-wide tanpa lag.",
-      stack: ["Tailwind CSS", "Semantic HTML5", "Asset Optimization"],
+      title: lang === "id" ? "PWA Offline-First & Realtime WebSockets" : "PWA Offline-First & Realtime WebSockets",
+      desc:
+        lang === "id"
+          ? "Pengembangan portal mobile PWA dengan sinkronisasi antrean offline, absensi GPS geofencing & selfie biometrik, serta pelacakan antrean produksi real-time via WebSocket."
+          : "Offline-first mobile PWA development with background queue sync, GPS geofencing & selfie biometrics, and live shop-floor tracking via WebSockets.",
+      stack: ["PWA", "Service Workers", "Laravel Reverb", "GPS Geofencing"],
     },
     {
       num: "05",
-      title: "DevOps & Cloud Deployment",
-      desc: "Penerapan alur kerja Git modern, otomatisasi build, serta deployment tanpa hambatan di infrastruktur cloud serverless.",
-      stack: ["Vercel Edge", "Git / GitHub", "Postman", "Linux Bash"],
+      title: lang === "id" ? "Automated QA, CI/CD & Disaster Recovery" : "Automated QA, CI/CD & Disaster Recovery",
+      desc:
+        lang === "id"
+          ? "Jaminan mutu perangkat lunak dengan automated E2E testing (Playwright), pipeline deployment otomatis GitHub Actions, dan skrip dual-backup terenkripsi ke bot Telegram."
+          : "Comprehensive software reliability via automated E2E testing (Playwright), automated GitHub Actions CI/CD pipelines, and encrypted dual-backup scripts with Telegram alerts.",
+      stack: ["Playwright E2E", "GitHub Actions", "Telegram Bot API", "Linux VPS"],
     },
   ];
 
@@ -50,11 +70,11 @@ export default function Skills({ skills = [] }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>03 / CAPABILITIES &amp; SERVICES</span>
+            <span>{t.label}</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            CORE DISCIPLINES
+            {t.sublabel}
           </div>
         </motion.div>
 
@@ -67,10 +87,10 @@ export default function Skills({ skills = [] }) {
           className="mb-16 max-w-2xl"
         >
           <h2 className="text-4xl sm:text-6xl font-medium tracking-tight text-white uppercase leading-[0.95] mb-4">
-            Technical Disciplines
+            {t.title}
           </h2>
           <p className="text-sm sm:text-base text-[#8f8f8f] leading-relaxed">
-            Bidang keahlian rekayasa perangkat lunak yang saya terapkan dalam setiap proyek untuk menjamin stabilitas dan nilai jangka panjang.
+            {t.desc}
           </p>
         </motion.div>
 

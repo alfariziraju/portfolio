@@ -1,19 +1,25 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Footer({ profile }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].footer;
+  const tNav = translations[lang].nav;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "About", href: "#about" },
-    { label: "Projects & Exp", href: "#projects" },
-    { label: "Capabilities", href: "#skills" },
-    { label: "Education", href: "#experience" },
-    { label: "Contact", href: "#contact" },
+    { label: tNav.home, href: "#hero" },
+    { label: tNav.about, href: "#about" },
+    { label: tNav.projects, href: "#projects" },
+    { label: tNav.skills, href: "#skills" },
+    { label: tNav.education, href: "#experience" },
+    { label: tNav.contact, href: "#contact" },
   ];
 
   return (
@@ -23,7 +29,7 @@ export default function Footer({ profile }) {
           {/* Navigation Sitemap */}
           <div className="md:col-span-6 space-y-3 font-mono text-xs">
             <p className="uppercase tracking-widest text-[#555] text-[10px]">
-              SITEMAP
+              {t.sitemap}
             </p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {navLinks.map((item) => (
@@ -43,7 +49,7 @@ export default function Footer({ profile }) {
           <div className="md:col-span-6 md:flex md:justify-end space-y-3 font-mono text-xs">
             <div>
               <p className="uppercase tracking-widest text-[#555] text-[10px] mb-2">
-                CONNECT
+                {t.connect}
               </p>
               <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
                 {profile?.github && (
@@ -96,14 +102,14 @@ export default function Footer({ profile }) {
         {/* Bottom Bar: Copyright & Back to top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#555]">
           <div>
-            © {new Date().getFullYear()} {profile?.name ? profile.name.toUpperCase() : "RADJU ALFARIZI"}. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} {profile?.name ? profile.name.toUpperCase() : "RADJU ALFARIZI"}. {t.rights}
           </div>
 
           <button
             onClick={scrollToTop}
             className="inline-flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
           >
-            <span>BACK TO TOP</span>
+            <span>{t.backToTop}</span>
             <ArrowUp size={13} />
           </button>
         </div>

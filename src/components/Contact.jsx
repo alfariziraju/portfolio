@@ -4,8 +4,13 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Contact({ profile }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].contact;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,15 +43,15 @@ export default function Contact({ profile }) {
       const data = await res.json();
 
       if (!res.ok || !data.success) {
-        throw new Error(data.message || "Gagal mengirim pesan.");
+        throw new Error(data.message || (lang === "id" ? "Gagal mengirim pesan." : "Failed to send message."));
       }
 
       setStatus("success");
-      setFeedbackMessage(data.message || "Pesan Anda berhasil terkirim!");
+      setFeedbackMessage(t.successMsg);
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (err) {
       setStatus("error");
-      setFeedbackMessage(err.message || "Terjadi kesalahan. Silakan coba lagi.");
+      setFeedbackMessage(err.message || (lang === "id" ? "Terjadi kesalahan. Silakan coba lagi." : "An error occurred. Please try again."));
     }
   };
 
@@ -64,11 +69,11 @@ export default function Contact({ profile }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>05 / INITIATE CONTACT</span>
+            <span>{t.label}</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            START A CONVERSATION
+            {t.sublabel}
           </div>
         </motion.div>
 
@@ -81,10 +86,10 @@ export default function Contact({ profile }) {
           className="mb-16 max-w-4xl"
         >
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.08] mb-6">
-            Selalu terbuka untuk proyek baru dan peluang kolaborasi rekayasa web.
+            {t.title}
           </h2>
           <p className="text-base sm:text-lg text-[#8f8f8f] max-w-2xl leading-relaxed">
-            Mari wujudkan aplikasi web yang andal dan terukur bersama. Kirimkan pesan melalui form atau hubungi langsung via email.
+            {t.desc}
           </p>
         </motion.div>
 
@@ -101,13 +106,13 @@ export default function Contact({ profile }) {
             <div className="space-y-4 font-mono text-xs">
               <div className="pb-3 border-b border-[#1f1f1f]">
                 <p className="text-[#737373] uppercase tracking-widest text-[10px] mb-1">
-                  DIRECT INQUIRIES
+                  {t.directEmail}
                 </p>
                 <a
-                  href={`mailto:${profile?.email || "radjualfarizi@gmail.com"}`}
+                  href={`mailto:${profile?.email || "radjualfarizi88@gmail.com"}`}
                   className="text-base sm:text-lg text-white font-sans hover:text-[#a3a3a3] transition-colors flex items-center gap-2 group"
                 >
-                  <span>{profile?.email || "radjualfarizi@gmail.com"}</span>
+                  <span>{profile?.email || "radjualfarizi88@gmail.com"}</span>
                   <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
@@ -117,13 +122,13 @@ export default function Contact({ profile }) {
                   BASE LOCATION
                 </p>
                 <p className="text-sm text-slate-200 font-sans">
-                  {profile?.location || "Indonesia"} (UTC+7 / Remote Friendly)
+                  {profile?.location || "Semarang, Indonesia"} (UTC+7 / Remote Friendly)
                 </p>
               </div>
 
               <div>
                 <p className="text-[#737373] uppercase tracking-widest text-[10px] mb-2">
-                  CHANNELS &amp; REPOSITORIES
+                  {t.socialLinks}
                 </p>
                 <div className="flex items-center gap-4 text-xs font-mono">
                   {profile?.github && (
@@ -167,7 +172,7 @@ export default function Contact({ profile }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] mb-1.5">
-                    Nama Lengkap *
+                    {t.formName} *
                   </label>
                   <input
                     type="text"
@@ -175,14 +180,14 @@ export default function Contact({ profile }) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Nama Anda"
+                    placeholder={t.formNamePlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#121212] border border-[#242424] text-white placeholder-[#555] text-sm focus:outline-none focus:border-white transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] mb-1.5">
-                    Alamat Email *
+                    {t.formEmail} *
                   </label>
                   <input
                     type="email"
@@ -190,7 +195,7 @@ export default function Contact({ profile }) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@example.com"
+                    placeholder={t.formEmailPlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#121212] border border-[#242424] text-white placeholder-[#555] text-sm focus:outline-none focus:border-white transition-colors"
                   />
                 </div>
@@ -198,21 +203,21 @@ export default function Contact({ profile }) {
 
               <div>
                 <label className="block text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] mb-1.5">
-                  Subjek
+                  {t.formSubject}
                 </label>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Tentang proyek atau tawaran kerja sama"
+                  placeholder={t.formSubjectPlaceholder}
                   className="w-full px-4 py-3 rounded-xl bg-[#121212] border border-[#242424] text-white placeholder-[#555] text-sm focus:outline-none focus:border-white transition-colors"
                 />
               </div>
 
               <div>
                 <label className="block text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] mb-1.5">
-                  Pesan Anda *
+                  {t.formMessage} *
                 </label>
                 <textarea
                   name="message"
@@ -220,7 +225,7 @@ export default function Contact({ profile }) {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Jelaskan kebutuhan, ruang lingkup, atau detail proyek Anda..."
+                  placeholder={t.formMessagePlaceholder}
                   className="w-full px-4 py-3 rounded-xl bg-[#121212] border border-[#242424] text-white placeholder-[#555] text-sm focus:outline-none focus:border-white transition-colors resize-none"
                 />
               </div>
@@ -255,7 +260,7 @@ export default function Contact({ profile }) {
                 whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-white text-[#0a0a0a] text-xs font-semibold tracking-wider uppercase hover:bg-slate-200 disabled:opacity-50 transition-all cursor-pointer shadow-md"
               >
-                <span>{status === "loading" ? "Mengirim Pesan..." : "Kirim Pesan Sekarang"}</span>
+                <span>{status === "loading" ? t.btnSending : t.btnSend}</span>
                 <ArrowUpRight size={15} />
               </motion.button>
             </form>

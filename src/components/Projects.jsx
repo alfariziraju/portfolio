@@ -5,14 +5,23 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 import ProjectImageSlider from "@/components/ProjectImageSlider";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Projects({ initialProjects = [] }) {
-  const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const { lang } = useLanguage();
+  const t = translations[lang].projects;
 
-  const categories = ["Semua", "Fullstack", "Frontend", "Backend"];
+  const categories = [
+    { key: "all", label: lang === "id" ? "Semua" : "All" },
+    { key: "fullstack", label: "Fullstack" },
+    { key: "frontend", label: "Frontend" },
+    { key: "backend", label: "Backend" },
+  ];
 
   const filteredProjects =
-    selectedCategory === "Semua"
+    selectedCategory === "all"
       ? initialProjects
       : initialProjects.filter(
           (p) => p.category?.toLowerCase() === selectedCategory.toLowerCase()
@@ -32,11 +41,11 @@ export default function Projects({ initialProjects = [] }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>02 / PRODUCTION WORKS &amp; EXPERIENCE</span>
+            <span>{t.label}</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            STAR METHOD CASE STUDIES
+            {t.sublabel}
           </div>
         </motion.div>
 
@@ -50,21 +59,21 @@ export default function Projects({ initialProjects = [] }) {
             className="lg:col-span-8"
           >
             <h2 className="text-4xl sm:text-6xl font-medium tracking-tight text-white uppercase leading-[0.95] mb-4">
-              Featured Projects &amp; Experience
+              {t.title}
             </h2>
             <p className="text-sm sm:text-base text-[#8f8f8f] max-w-2xl leading-relaxed">
-              Arsitektur sistem nyata dan pengalaman profesional terstruktur dengan metode STAR (Situation, Task, Action, Result) dari fase perancangan hingga implementasi siap produksi.
+              {t.desc}
             </p>
           </motion.div>
 
           {/* Filter Bar with Animated Indicators */}
           <div className="lg:col-span-4 flex flex-wrap lg:justify-end items-center gap-1 text-xs font-mono tracking-wider uppercase">
             {categories.map((cat, idx) => {
-              const isSelected = selectedCategory === cat;
+              const isSelected = selectedCategory === cat.key;
               return (
-                <div key={cat} className="flex items-center relative">
+                <div key={cat.key} className="flex items-center relative">
                   <button
-                    onClick={() => setSelectedCategory(cat)}
+                    onClick={() => setSelectedCategory(cat.key)}
                     className={`relative px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
                       isSelected
                         ? "text-white font-semibold"
@@ -78,7 +87,7 @@ export default function Projects({ initialProjects = [] }) {
                         transition={{ type: "spring", stiffness: 400, damping: 30 }}
                       />
                     )}
-                    <span>{cat}</span>
+                    <span>{cat.label}</span>
                   </button>
                   {idx < categories.length - 1 && (
                     <span className="text-[#333333] select-none mx-0.5">/</span>
@@ -95,133 +104,147 @@ export default function Projects({ initialProjects = [] }) {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <motion.article
-                layout
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.96, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.96, y: 15 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                className={`group flex flex-col justify-between rounded-2xl border border-[#242424] bg-gradient-to-b from-[#121212] to-[#0a0a0a] p-7 sm:p-9 hover:border-[#3d3d3d] hover:shadow-xl hover:shadow-black/50 transition-colors duration-300 ${
-                  project.isFeatured && index === 0 ? "md:col-span-2" : ""
-                }`}
-              >
-                <div>
-                  {/* Card Top: Index Number & Links */}
-                  <div className="flex items-center justify-between border-b border-[#1f1f1f] pb-4 mb-6 text-xs font-mono text-[#8f8f8f]">
-                    <div className="flex items-center gap-3">
-                      <span className="text-slate-500">#{String(index + 1).padStart(2, "0")}</span>
-                      <span className="text-[#333333]">|</span>
-                      <span className="uppercase text-slate-300">{project.category}</span>
-                      {project.isFeatured && (
-                        <span className="inline-flex items-center gap-1 text-[10px] text-amber-400 font-mono">
-                          <Sparkles size={11} /> FEATURED
+            {filteredProjects.map((project, index) => {
+              // Localized content if EN is active
+              const enData = project.star?.en;
+              const displayTitle = (lang === "en" && enData?.title) || project.title;
+              const displayRole = (lang === "en" && enData?.role) || project.role;
+              const displayCompany = (lang === "en" && enData?.company) || project.company;
+              const displayPeriod = (lang === "en" && enData?.period) || project.period;
+
+              const situation = (lang === "en" && enData?.situation) || project.star?.situation;
+              const task = (lang === "en" && enData?.task) || project.star?.task;
+              const action = (lang === "en" && enData?.action) || project.star?.action;
+              const result = (lang === "en" && enData?.result) || project.star?.result;
+
+              return (
+                <motion.article
+                  layout
+                  key={project.id}
+                  initial={{ opacity: 0, scale: 0.96, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96, y: 15 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -5, transition: { duration: 0.25 } }}
+                  className={`group flex flex-col justify-between rounded-2xl border border-[#242424] bg-gradient-to-b from-[#121212] to-[#0a0a0a] p-7 sm:p-9 hover:border-[#3d3d3d] hover:shadow-xl hover:shadow-black/50 transition-colors duration-300 ${
+                    project.isFeatured && index === 0 ? "md:col-span-2" : ""
+                  }`}
+                >
+                  <div>
+                    {/* Card Top: Index Number & Links */}
+                    <div className="flex items-center justify-between border-b border-[#1f1f1f] pb-4 mb-6 text-xs font-mono text-[#8f8f8f]">
+                      <div className="flex items-center gap-3">
+                        <span className="text-slate-500">#{String(index + 1).padStart(2, "0")}</span>
+                        <span className="text-[#333333]">|</span>
+                        <span className="uppercase text-slate-300">{project.category}</span>
+                        {project.isFeatured && (
+                          <span className="inline-flex items-center gap-1 text-[10px] text-amber-400 font-mono">
+                            <Sparkles size={11} /> FEATURED
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        {project.repoUrl && (
+                          <a
+                            href={project.repoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white transition-colors p-1"
+                            title={t.repo}
+                          >
+                            <GithubIcon size={16} />
+                          </a>
+                        )}
+                        {project.demoUrl && (
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white transition-colors p-1 group/link"
+                            title={t.liveDemo}
+                          >
+                            <ArrowUpRight size={17} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Role & Company Experience Meta */}
+                    {displayCompany && (
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-2">
+                        <span className="text-white font-medium">{displayRole}</span>
+                        <span className="text-[#444]">—</span>
+                        <span className="text-[#aaa] uppercase tracking-wider">{displayCompany}</span>
+                        {displayPeriod && (
+                          <>
+                            <span className="text-[#444]">|</span>
+                            <span className="text-[#888]">{displayPeriod}</span>
+                          </>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Title */}
+                    <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-tight group-hover:text-slate-200 transition-colors mb-3">
+                      {displayTitle}
+                    </h3>
+
+                    {/* Interactive Screenshot Slider (Multiple Screenshots) */}
+                    {(project.images?.length > 0 || project.image) && (
+                      <ProjectImageSlider
+                        title={displayTitle}
+                        images={
+                          project.images || [
+                            { url: project.image, caption: "System Preview" },
+                          ]
+                        }
+                      />
+                    )}
+
+                    {/* Editorial Flow Narrative (Context -> Action -> Impact) */}
+                    {project.star ? (
+                      <div className="my-5 space-y-3 text-sm leading-relaxed border-t border-[#1f1f1f] pt-4">
+                        <p className="text-[#a3a3a3]">
+                          {situation} {task}
+                        </p>
+                        <p className="text-slate-300">
+                          {action}
+                        </p>
+                        <p className="text-emerald-300/90 font-medium">
+                          {result}
+                        </p>
+                      </div>
+                    ) : (
+                      /* Default Description */
+                      <p className="text-sm text-[#a3a3a3] leading-relaxed mb-6 max-w-2xl">
+                        {project.description}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Card Bottom: Stats & Tags */}
+                  <div className="pt-6 border-t border-[#1f1f1f] space-y-4">
+                    {project.stats && (
+                      <div className="text-xs font-mono text-[#cfcfcf] flex items-center gap-2">
+                        <span>{project.stats}</span>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+                      {project.tags?.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded bg-[#171717] border border-[#262626] text-[#8f8f8f] group-hover:text-slate-300 group-hover:border-[#333] transition-colors"
+                        >
+                          {tag}
                         </span>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      {project.repoUrl && (
-                        <a
-                          href={project.repoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-white transition-colors p-1"
-                          title="Repository GitHub"
-                        >
-                          <GithubIcon size={16} />
-                        </a>
-                      )}
-                      {project.demoUrl && (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-white transition-colors p-1 group/link"
-                          title="Live Demo"
-                        >
-                          <ArrowUpRight size={17} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                        </a>
-                      )}
+                      ))}
                     </div>
                   </div>
-
-                  {/* Role & Company Experience Meta */}
-                  {project.company && (
-                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-2">
-                      <span className="text-white font-medium">{project.role}</span>
-                      <span className="text-[#444]">—</span>
-                      <span className="text-[#aaa] uppercase tracking-wider">{project.company}</span>
-                      {project.period && (
-                        <>
-                          <span className="text-[#444]">|</span>
-                          <span className="text-[#888]">{project.period}</span>
-                        </>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-tight group-hover:text-slate-200 transition-colors mb-3">
-                    {project.title}
-                  </h3>
-
-                  {/* Interactive Screenshot Slider (Multiple Screenshots) */}
-                  {(project.images?.length > 0 || project.image) && (
-                    <ProjectImageSlider
-                      title={project.title}
-                      images={
-                        project.images || [
-                          { url: project.image, caption: "System Preview" },
-                        ]
-                      }
-                    />
-                  )}
-
-                  {/* Editorial Flow Narrative (Context -> Action -> Impact) */}
-                  {project.star ? (
-                    <div className="my-5 space-y-3 text-sm leading-relaxed border-t border-[#1f1f1f] pt-4">
-                      <p className="text-[#a3a3a3]">
-                        {project.star.situation} {project.star.task}
-                      </p>
-                      <p className="text-slate-300">
-                        {project.star.action}
-                      </p>
-                      <p className="text-emerald-300/90 font-medium">
-                        {project.star.result}
-                      </p>
-                    </div>
-                  ) : (
-                    /* Default Description */
-                    <p className="text-sm text-[#a3a3a3] leading-relaxed mb-6 max-w-2xl">
-                      {project.description}
-                    </p>
-                  )}
-                </div>
-
-                {/* Card Bottom: Stats & Tags */}
-                <div className="pt-6 border-t border-[#1f1f1f] space-y-4">
-                  {project.stats && (
-                    <div className="text-xs font-mono text-[#cfcfcf] flex items-center gap-2">
-                      <span>{project.stats}</span>
-                    </div>
-                  )}
-
-                  <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
-                    {project.tags?.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded bg-[#171717] border border-[#262626] text-[#8f8f8f] group-hover:text-slate-300 group-hover:border-[#333] transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.article>
-            ))}
+                </motion.article>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
       </div>

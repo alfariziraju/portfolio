@@ -1,0 +1,198 @@
+export const translations = {
+  id: {
+    nav: {
+      home: "Beranda",
+      about: "Tentang",
+      projects: "Proyek & Pengalaman",
+      skills: "Keahlian",
+      education: "Pendidikan",
+      contact: "Kontak",
+      status: "TERSEDIA UNTUK KERJA",
+    },
+    hero: {
+      badge: "PORTOFOLIO",
+      subtitle: "ARSITEKTUR & REKAYASA SISTEM FULL STACK",
+      tagline:
+        "Membangun sistem web nyata yang andal, aman, dan efisien untuk operasional institusi dan bisnis.",
+      ctaProjects: "Lihat Proyek & Solusi",
+      ctaContact: "Hubungi Saya",
+      specLocation: "LOKASI",
+      specLocationVal: "SEMARANG, ID",
+      specFocus: "FOKUS UTAMA",
+      specFocusVal: "ENTERPRISE & APIS",
+      specStack: "CORE STACK",
+      specStackVal: "LARAVEL / REACT / VUE",
+    },
+    about: {
+      label: "01 / TENTANG SAYA",
+      sublabel: "FILOSOFI & PROFIL",
+      heading: "Arsitektur Sistem & Rekayasa Perangkat Lunak.",
+      lead:
+        "Berbasis di Semarang, Indonesia, berfokus pada pengembangan aplikasi web skala penuh yang mengutamakan kecepatan, struktur kode bersih, dan keandalan sistem jangka panjang.",
+      specLocation: "LOKASI",
+      specLocationVal: "SEMARANG / INDONESIA",
+      specCore: "SPESIALISASI",
+      specCoreVal: "FULLSTACK & APIS",
+      specAvail: "KETERSEDIAAN",
+      specAvailVal: "TERBUKA UNTUK KOLABORASI",
+      story:
+        "Full Stack Web Developer yang berfokus menyederhanakan alur kerja kompleks menjadi sistem web yang otomatis, andal, dan efisien. Berpengalaman membangun solusi kelas enterprise secara end-to-end: integrasi Host-to-Host perbankan syariah, ERP manufaktur berbasis PWA, hingga platform operasional proyek terpadu.",
+      closing:
+        "Dari pengelolaan basis data relasional hingga pengalaman pengguna interaktif di browser, seluruh komponen diintegrasikan secara terpadu untuk mendukung tujuan bisnis nyata.",
+      cta: "Jelajahi Proyek Pilihan",
+    },
+    projects: {
+      label: "02 / KARYA PRODUKSI & PENGALAMAN",
+      sublabel: "STUDI KASUS STAR METHOD",
+      title: "Featured Projects & Experience",
+      desc:
+        "Arsitektur sistem nyata dan pengalaman profesional terstruktur dengan metode STAR (Situation, Task, Action, Result) dari fase perancangan hingga implementasi siap produksi.",
+      categories: ["Semua", "Fullstack", "Frontend", "Backend"],
+      liveDemo: "Lihat Live Demo",
+      repo: "Repositori GitHub",
+      syntheticDataBadge: "DATA SINTETIS",
+      privacyDisclaimer:
+        "* Seluruh nama siswa, identitas, dan data finansial pada tangkapan layar di atas telah disamarkan menggunakan data sintetis (dummy) demi kepatuhan privasi institusi.",
+    },
+    skills: {
+      label: "03 / KEAHLIAN TEKNIS",
+      sublabel: "CORE COMPETENCIES",
+      title: "Capabilities & Tech Stack",
+      desc:
+        "Rangkaian teknologi dan disiplin rekayasa yang saya gunakan untuk membangun sistem kelas produksi yang skalabel dan andal.",
+    },
+    education: {
+      label: "04 / PENDIDIKAN & KREDENSIAL",
+      sublabel: "CERTIFIED FOUNDATIONS",
+      title: "Education & Credentials",
+      desc:
+        "Fondasi akademik teknik informatika dan sertifikasi rekayasa perangkat lunak berstandar industri.",
+      academicTitle: "LATAR BELAKANG AKADEMIK",
+      credentialTitle: "SERTIFIKASI & LISENSI",
+    },
+    contact: {
+      label: "05 / HUBUNGI SAYA",
+      sublabel: "DIRECT INQUIRY",
+      title: "Let's Collaborate",
+      desc:
+        "Tertarik berkolaborasi untuk posisi Software Engineer, proyek kontrak, atau pengembangan sistem bisnis? Kirim pesan langsung di bawah ini.",
+      directEmail: "EMAIL LANGSUNG",
+      socialLinks: "JARINGAN PROFESIONAL",
+      formName: "Nama Lengkap",
+      formNamePlaceholder: "Nama Anda atau nama perusahaan",
+      formEmail: "Alamat Email",
+      formEmailPlaceholder: "email@anda.com",
+      formSubject: "Subjek / Topik",
+      formSubjectPlaceholder: "Penawaran Proyek / Diskusi Teknis",
+      formMessage: "Pesan Anda",
+      formMessagePlaceholder: "Ceritakan kebutuhan proyek atau peran yang ingin Anda diskusikan...",
+      btnSend: "Kirim Pesan",
+      btnSending: "Mengirim...",
+      successMsg: "Pesan Anda telah berhasil dikirim! Saya akan segera menghubungi Anda.",
+    },
+    footer: {
+      sitemap: "SITEMAP",
+      connect: "HUBUNGKAN",
+      rights: "ALL RIGHTS RESERVED.",
+      backToTop: "KEMBALI KE ATAS",
+    },
+  },
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      projects: "Projects & Exp",
+      skills: "Capabilities",
+      education: "Education",
+      contact: "Contact",
+      status: "AVAILABLE FOR WORK",
+    },
+    hero: {
+      badge: "PORTFOLIO",
+      subtitle: "FULL STACK ARCHITECTURE & SYSTEM DESIGN",
+      tagline:
+        "Engineering reliable, secure, and efficient web systems for institutional and enterprise operations.",
+      ctaProjects: "Explore Works & Solutions",
+      ctaContact: "Get in Touch",
+      specLocation: "LOCATION",
+      specLocationVal: "SEMARANG, ID",
+      specFocus: "CORE FOCUS",
+      specFocusVal: "ENTERPRISE & APIS",
+      specStack: "CORE STACK",
+      specStackVal: "LARAVEL / REACT / VUE",
+    },
+    about: {
+      label: "01 / ABOUT ME",
+      sublabel: "PHILOSOPHY & PROFILE",
+      heading: "System Architecture & Software Engineering.",
+      lead:
+        "Based in Semarang, Indonesia, specializing in building full-stack web platforms prioritizing performance, clean software architecture, and long-term maintainability.",
+      specLocation: "LOCATION",
+      specLocationVal: "SEMARANG / INDONESIA",
+      specCore: "CORE SPECIALTY",
+      specCoreVal: "FULLSTACK & APIS",
+      specAvail: "AVAILABILITY",
+      specAvailVal: "OPEN FOR COLLABORATION",
+      story:
+        "Full Stack Web Developer specializing in building reliable, real-world business applications with the PHP (Laravel) and modern JavaScript ecosystem (React, Vue, Inertia.js, and Tailwind CSS). Experienced in translating complex operational workflows into scalable and automated solutions: Host-to-Host banking integrations, manufacturing ERP with offline-first PWAs, and integrated operations platforms.",
+      closing:
+        "From relational database schema design to responsive, interactive client experiences, every layer is engineered to serve tangible business objectives.",
+      cta: "Explore Featured Works",
+    },
+    projects: {
+      label: "02 / PRODUCTION WORKS & EXPERIENCE",
+      sublabel: "STAR METHOD CASE STUDIES",
+      title: "Featured Projects & Experience",
+      desc:
+        "Production-grade system architectures and professional track record structured via the STAR method (Situation, Task, Action, Result) from design to deployment.",
+      categories: ["All", "Fullstack", "Frontend", "Backend"],
+      liveDemo: "Live Demo",
+      repo: "GitHub Repository",
+      syntheticDataBadge: "SYNTHETIC DATA",
+      privacyDisclaimer:
+        "* All student names, identities, and financial figures in the screenshots above have been obfuscated using synthetic test data for institutional privacy compliance.",
+    },
+    skills: {
+      label: "03 / TECHNICAL CAPABILITIES",
+      sublabel: "CORE COMPETENCIES",
+      title: "Capabilities & Tech Stack",
+      desc:
+        "The software technologies, libraries, and engineering disciplines utilized to build production-grade, scalable systems.",
+    },
+    education: {
+      label: "04 / ACADEMIC & CREDENTIALS",
+      sublabel: "CERTIFIED FOUNDATIONS",
+      title: "Education & Credentials",
+      desc:
+        "Academic foundation in informatics engineering and industry-certified software engineering credentials.",
+      academicTitle: "ACADEMIC BACKGROUND",
+      credentialTitle: "CREDENTIALS & CERTIFICATIONS",
+    },
+    contact: {
+      label: "05 / GET IN TOUCH",
+      sublabel: "DIRECT INQUIRY",
+      title: "Let's Collaborate",
+      desc:
+        "Interested in full-time Software Engineering roles, contract engineering, or custom business software? Drop a direct message below.",
+      directEmail: "DIRECT EMAIL",
+      socialLinks: "PROFESSIONAL NETWORKS",
+      formName: "Full Name",
+      formNamePlaceholder: "Your name or organization",
+      formEmail: "Email Address",
+      formEmailPlaceholder: "your.email@domain.com",
+      formSubject: "Subject",
+      formSubjectPlaceholder: "Project Collaboration / Technical Discussion",
+      formMessage: "Your Message",
+      formMessagePlaceholder: "Tell me about your project needs or the role you are looking to fill...",
+      btnSend: "Send Message",
+      btnSending: "Sending...",
+      successMsg: "Thank you! Your message has been sent successfully. I will reach out shortly.",
+    },
+    footer: {
+      sitemap: "SITEMAP",
+      connect: "CONNECT",
+      rights: "ALL RIGHTS RESERVED.",
+      backToTop: "BACK TO TOP",
+    },
+  },
+};

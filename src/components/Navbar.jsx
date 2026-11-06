@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
+import LanguageToggle from "@/components/LanguageToggle";
 
 export default function Navbar({ profile }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations[lang].nav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +21,12 @@ export default function Navbar({ profile }) {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "About", href: "#about" },
-    { label: "Projects & Exp", href: "#projects" },
-    { label: "Capabilities", href: "#skills" },
-    { label: "Education", href: "#experience" },
-    { label: "Contact", href: "#contact" },
+    { label: t.home, href: "#hero" },
+    { label: t.about, href: "#about" },
+    { label: t.projects, href: "#projects" },
+    { label: t.skills, href: "#skills" },
+    { label: t.education, href: "#experience" },
+    { label: t.contact, href: "#contact" },
   ];
 
   return (
@@ -43,34 +48,41 @@ export default function Navbar({ profile }) {
 
         {/* Center: Metadata / Status */}
         <div className="hidden lg:flex items-center gap-3 text-xs tracking-widest uppercase text-[#8f8f8f] font-mono">
-          <span className="text-slate-300">AVAILABLE FOR WORK</span>
+          <span className="text-slate-300">{t.status}</span>
         </div>
 
-        {/* Right: Editorial Links with Slash Separators */}
-        <nav className="hidden md:flex items-center text-xs tracking-wider uppercase font-medium">
-          {navLinks.map((item, index) => (
-            <div key={item.href} className="flex items-center">
-              <a
-                href={item.href}
-                className="text-[#a3a3a3] hover:text-white transition-colors duration-200 px-2 py-1"
-              >
-                {item.label}
-              </a>
-              {index < navLinks.length - 1 && (
-                <span className="text-[#383838] select-none mx-1">/</span>
-              )}
-            </div>
-          ))}
-        </nav>
+        {/* Right: Editorial Links & Language Toggle */}
+        <div className="hidden md:flex items-center gap-5">
+          <nav className="flex items-center text-xs tracking-wider uppercase font-medium">
+            {navLinks.map((item, index) => (
+              <div key={item.href} className="flex items-center">
+                <a
+                  href={item.href}
+                  className="text-[#a3a3a3] hover:text-white transition-colors duration-200 px-2 py-1"
+                >
+                  {item.label}
+                </a>
+                {index < navLinks.length - 1 && (
+                  <span className="text-[#383838] select-none mx-1">/</span>
+                )}
+              </div>
+            ))}
+          </nav>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-white hover:text-[#a3a3a3] transition-colors focus:outline-none"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+          <LanguageToggle />
+        </div>
+
+        {/* Mobile: Toggle + Hamburger Button */}
+        <div className="flex md:hidden items-center gap-2.5">
+          <LanguageToggle />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-white hover:text-[#a3a3a3] transition-colors focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Overlay */}
@@ -90,8 +102,8 @@ export default function Navbar({ profile }) {
           </div>
 
           <div className="pt-6 border-t border-[#242424] flex items-center justify-between text-xs tracking-wider uppercase text-[#8f8f8f] font-mono">
-            <span>INDONESIA</span>
-            <span className="text-slate-300">OPEN FOR WORK</span>
+            <span>SEMARANG, ID</span>
+            <span className="text-slate-300">{t.status}</span>
           </div>
         </div>
       )}

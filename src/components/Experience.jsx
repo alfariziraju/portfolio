@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Experience({
-  experiences = [],
   education = [],
   certifications = [],
 }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].education;
   const transition = { duration: 0.7, ease: [0.16, 1, 0.3, 1] };
 
   return (
@@ -21,11 +24,11 @@ export default function Experience({
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>04 / ACADEMIC &amp; CREDENTIALS</span>
+            <span>{t.label}</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            CERTIFIED FOUNDATIONS
+            {t.sublabel}
           </div>
         </motion.div>
 
@@ -38,10 +41,10 @@ export default function Experience({
           className="mb-16 max-w-2xl"
         >
           <h2 className="text-4xl sm:text-6xl font-medium tracking-tight text-white uppercase leading-[0.95] mb-4">
-            Education &amp; Credentials
+            {t.title}
           </h2>
           <p className="text-sm sm:text-base text-[#8f8f8f] leading-relaxed">
-            Fondasi akademik teknik informatika dan sertifikasi rekayasa perangkat lunak berstandar industri.
+            {t.desc}
           </p>
         </motion.div>
 
@@ -50,7 +53,7 @@ export default function Experience({
           {/* Education */}
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xs font-mono uppercase tracking-widest text-[#8f8f8f]">
-              ACADEMIC BACKGROUND
+              {t.academicTitle}
             </h3>
             {education.map((edu, idx) => (
               <div
@@ -62,10 +65,14 @@ export default function Experience({
                   <span>{edu.period}</span>
                 </div>
                 <h4 className="text-lg font-medium text-white">
-                  {edu.degree}
+                  {lang === "en" && edu.degree.includes("S1 Teknik Informatika")
+                    ? "Bachelor of Informatics Engineering (S.Kom)"
+                    : edu.degree}
                 </h4>
                 <p className="text-xs text-[#8f8f8f] leading-relaxed">
-                  {edu.description}
+                  {lang === "en"
+                    ? "Focus on Software Engineering, Relational Database Architecture, and System Security."
+                    : edu.description}
                 </p>
               </div>
             ))}
@@ -74,7 +81,7 @@ export default function Experience({
           {/* Certifications */}
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xs font-mono uppercase tracking-widest text-[#8f8f8f]">
-              CREDENTIALS &amp; CERTIFICATIONS
+              {t.credentialTitle}
             </h3>
             <div className="space-y-3 font-mono text-xs">
               {certifications.map((cert, idx) => (

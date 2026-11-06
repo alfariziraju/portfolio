@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function ProjectImageSlider({ images = [], title = "" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { lang } = useLanguage();
+  const t = translations[lang].projects;
 
   if (!images || images.length === 0) return null;
 
@@ -34,7 +38,7 @@ export default function ProjectImageSlider({ images = [], title = "" }) {
               {current.caption || "system-preview.app"}
             </span>
             <span className="hidden sm:inline-block text-[9px] font-mono tracking-wider text-[#666] border border-[#2e2e2e] rounded px-1.5 py-0.2 select-none uppercase">
-              SYNTHETIC DATA
+              {t.syntheticDataBadge}
             </span>
           </div>
 
@@ -121,7 +125,7 @@ export default function ProjectImageSlider({ images = [], title = "" }) {
 
       {/* Subtle Privacy & Compliance Footnote */}
       <p className="text-[11px] font-mono text-[#666666] tracking-tight leading-relaxed">
-        * Seluruh nama siswa, identitas, dan data finansial pada tangkapan layar di atas telah disamarkan menggunakan data sintetis (dummy) demi kepatuhan privasi institusi.
+        {t.privacyDisclaimer}
       </p>
     </div>
   );

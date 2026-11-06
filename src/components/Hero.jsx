@@ -3,8 +3,12 @@
 import { motion } from "motion/react";
 import { ArrowDownRight, ArrowUpRight, Terminal, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Hero({ profile }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].hero;
   // Smooth cubic-bezier transition like Framer/Aether Studio
   const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
 
@@ -22,11 +26,11 @@ export default function Hero({ profile }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-8 sm:mb-12"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>PORTFOLIO</span>
+            <span>{t.badge}</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase hidden sm:block">
-            FULL STACK ARCHITECTURE &amp; DESIGN
+            {t.subtitle}
           </div>
         </motion.div>
 
@@ -61,10 +65,9 @@ export default function Hero({ profile }) {
               ROLE &amp; FOCUS
             </p>
             <p className="text-base sm:text-xl text-slate-200 font-normal leading-relaxed max-w-2xl">
-              {profile?.role || "Full Stack JavaScript Developer"} —{" "}
+              {profile?.role || "Software Developer"} —{" "}
               <span className="text-[#a3a3a3]">
-                {profile?.tagline ||
-                  "Membangun aplikasi web performan tinggi, sistem terdistribusi, dan antarmuka digital yang presisi."}
+                {t.tagline}
               </span>
             </p>
           </div>
@@ -75,7 +78,7 @@ export default function Hero({ profile }) {
                 LOCATION &amp; COLLABORATION
               </p>
               <p className="text-sm text-[#cfcfcf]">
-                {profile?.location || "Indonesia"} — Remote &amp; Global Ready
+                {profile?.location || "Semarang, Indonesia"} — Remote &amp; Global Ready
               </p>
             </div>
 
@@ -87,7 +90,7 @@ export default function Hero({ profile }) {
                 whileTap={{ y: 0 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#0a0a0a] text-xs font-semibold tracking-wider uppercase hover:bg-slate-200 transition-all duration-200 group shadow-sm"
               >
-                <span>Selected Works</span>
+                <span>{t.ctaProjects}</span>
                 <ArrowDownRight size={15} className="group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
               </motion.a>
 
@@ -97,7 +100,7 @@ export default function Hero({ profile }) {
                 whileTap={{ y: 0 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#171717] hover:bg-[#242424] text-white text-xs font-medium tracking-wider uppercase border border-[#303030] transition-all duration-200 group"
               >
-                <span>Get In Touch</span>
+                <span>{t.ctaContact}</span>
                 <ArrowUpRight size={15} className="text-[#8f8f8f] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </motion.a>
             </div>
@@ -122,7 +125,7 @@ export default function Hero({ profile }) {
 
             <div className="flex items-center gap-3">
               <span className="text-slate-300 text-[11px]">
-                ACTIVE ENV: NEXT.JS 16
+                ACTIVE ENV: PRODUCTION
               </span>
             </div>
           </div>
@@ -136,11 +139,15 @@ export default function Hero({ profile }) {
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-medium tracking-tight text-white leading-snug">
-                Merancang sistem perangkat lunak yang andal, dari skema basis data hingga antarmuka pengguna responsif.
+                {lang === "id"
+                  ? "Merancang sistem perangkat lunak yang andal, dari skema basis data hingga antarmuka pengguna responsif."
+                  : "Architecting reliable enterprise software systems, from database schemas to responsive client interfaces."}
               </h2>
 
               <p className="text-sm text-[#a3a3a3] leading-relaxed max-w-xl">
-                Mengintegrasikan Next.js modern, API Node.js/Express, dan persistensi data yang efisien untuk menghasilkan produk web bernilai tinggi.
+                {lang === "id"
+                  ? "Mengintegrasikan backend Laravel yang kokoh, integrasi perbankan Host-to-Host (H2H), dan frontend modern (React, Vue, Inertia, PWA) untuk menghadirkan solusi operasional kelas industri."
+                  : "Integrating robust Laravel backends, Host-to-Host (H2H) banking APIs, and modern frontends (React, Vue, Inertia, PWA) to deliver high-impact enterprise operational solutions."}
               </p>
             </div>
 
@@ -152,20 +159,20 @@ export default function Hero({ profile }) {
               </div>
 
               <div className="flex justify-between py-1 border-b border-[#1c1c1c]">
-                <span className="text-[#8f8f8f]">Frontend</span>
-                <span className="text-slate-200">React / Next.js / Tailwind</span>
+                <span className="text-[#8f8f8f]">Backend</span>
+                <span className="text-slate-200">PHP 8 / Laravel / H2H API</span>
               </div>
               <div className="flex justify-between py-1 border-b border-[#1c1c1c]">
-                <span className="text-[#8f8f8f]">Backend</span>
-                <span className="text-slate-200">Node.js / Express / REST</span>
+                <span className="text-[#8f8f8f]">Frontend</span>
+                <span className="text-slate-200">React / Vue / Inertia / PWA</span>
               </div>
               <div className="flex justify-between py-1 border-b border-[#1c1c1c]">
                 <span className="text-[#8f8f8f]">Database</span>
-                <span className="text-slate-200">SQLite / PostgreSQL / Prisma</span>
+                <span className="text-slate-200">MySQL / Relational Schema</span>
               </div>
               <div className="flex justify-between py-1">
                 <span className="text-[#8f8f8f]">Deployment</span>
-                <span className="text-slate-200">Vercel Global Edge</span>
+                <span className="text-slate-200">Linux VPS / Vercel Edge</span>
               </div>
             </div>
           </div>

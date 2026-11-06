@@ -92,7 +92,17 @@
         "situation": "Pengelolaan administrasi SPP, tagihan siswa, dan pembukuan kas madrasah masih manual serta belum terintegrasi langsung dengan perbankan syariah mitra, memicu antrean fisik dan potensi selisih rekapitulasi kas.",
         "task": "Merancang dan membangun sistem informasi ERP keuangan madrasah secara end-to-end dengan gateway pembayaran bank otomatis, pembukuan kas instan, dan otorisasi multi-role.",
         "action": "Mengembangkan integrasi Host-to-Host (H2H) Virtual Account dengan bank-grade webhook security (IP whitelisting & anti-replay protection), pemantauan status lunas real-time via Server-Sent Events (SSE), modul auto-journaling akuntansi Buku Kas Umum (BKU), serta pipeline CI/CD GitHub Actions dan automated database backup ke bot Telegram.",
-        "result": "Digitalisasi pembayaran SPP 100% otomatis, eliminasi risiko rekonsiliasi manual berkat reverse-inquiry scheduler, dan ketersediaan laporan BKU audit-ready ekspor PDF/Excel secara instan."
+        "result": "Digitalisasi pembayaran SPP 100% otomatis, eliminasi risiko rekonsiliasi manual berkat reverse-inquiry scheduler, dan ketersediaan laporan BKU audit-ready ekspor PDF/Excel secara instan.",
+        "en": {
+          "title": "SIM Keuangan MAN — School Financial ERP & Banking H2H Integration",
+          "role": "Backend / Web Developer",
+          "company": "MAN 1 KOTA SEMARANG",
+          "period": "Mar 2025 – Aug 2026",
+          "situation": "School tuition billing, student invoicing, and cash administration were managed manually without institutional banking integration, causing physical queues and manual book-balancing discrepancies.",
+          "task": "Engineered an end-to-end school financial ERP and billing management system with automated banking gateway integrations and multi-role access control.",
+          "action": "Developed Host-to-Host (H2H) Virtual Account integration with partner Bank featuring bank-level webhook security (IP whitelisting & anti-replay protection), real-time payment updates via Server-Sent Events (SSE), automated double-entry General Cash Book (BKU) journaling, and automated CI/CD deployment pipelines with Telegram database backup alerts.",
+          "result": "Automated tuition billing and reconciliation workflows end-to-end, eliminated manual cash reconciliation risks, and produced official audit-ready BKU reports exportable to PDF/Excel."
+        }
       },
       "description": "Sistem Informasi Manajemen Keuangan Madrasah Aliyah Negeri (MAN) dengan integrasi langsung Host-to-Host (H2H) dengan Bank Mitra. Menyediakan Virtual Account otomatis dengan webhook perbankan terproteksi, pencatatan jurnal akuntansi otomatis (auto-journaling), rekonsiliasi rekening koran, dan penyusunan RKA bulanan.",
       "tags": ["PHP", "Laravel", "Host-to-Host (H2H) Banking API", "Virtual Account (VA)", "Webhook Security", "MySQL", "Alpine.js", "SSE", "DomPDF", "Telegram Bot API"],
@@ -112,7 +122,17 @@
         "situation": "Workshop manufaktur fabrikasi akrilik dan signage memerlukan digitalisasi presensi karyawan pabrik yang akurat serta pelacakan antrean order lantai produksi yang transparan secara real-time.",
         "task": "Memimpin rancang bangun sistem ERP manufaktur dan modul Shop Floor Tracking modular berbasis web dan mobile.",
         "action": "Membangun portal karyawan PWA offline-first dengan presensi GPS geofencing radius ketat dan verifikasi selfie biometrik, otomasi payroll berjenjang dengan potongan kasbon/lembur, sinkronisasi antrean kerja lantai produksi via WebSocket (Laravel Reverb), dan pengujian E2E otomatis berbasis Playwright.",
-        "result": "Otomasi total rekap penggajian bebas salah hitung, eliminasi kecurangan absensi berkat geofencing & biometrik, serta visibilitas progres pengerjaan signage secara live antar-stasiun bengkel."
+        "result": "Otomasi total rekap penggajian bebas salah hitung, eliminasi kecurangan absensi berkat geofencing & biometrik, serta visibilitas progres pengerjaan signage secara live antar-stasiun bengkel.",
+        "en": {
+          "title": "Acrylico ERP — Enterprise Resource Planning & Shop Floor Management",
+          "role": "Full Stack Developer",
+          "company": "NATACODE (ACRYLICO ERP)",
+          "period": "Aug 2026 – Nov 2026",
+          "situation": "An acrylic and signage manufacturing workshop needed automated shop-floor tracking and fraud-proof worker attendance directly connected with payroll calculations.",
+          "task": "Led full-cycle design and development of an Enterprise Resource Planning (ERP) platform and real-time shop floor production tracking system.",
+          "action": "Built an offline-first mobile PWA for employee attendance with high-precision GPS geofencing and selfie photo verification, automated multi-tier payroll with overtime and cash advance deductions, real-time shop floor order tracking via WebSockets (Laravel Reverb), and automated E2E tests with Playwright.",
+          "result": "Fully automated payroll processing eliminating calculation errors, prevented attendance fraud with biometric/geofencing verification, and provided live production queue visibility across workshop stations."
+        }
       },
       "description": "Sistem ERP modular dan Shop Floor Tracking khusus industri manufaktur fabrikasi akrilik dan signage. Dilengkapi portal karyawan PWA mobile (absensi GPS geofence, selfie biometrik, offline-first), otomasi penggajian & kasbon, serta sinkronisasi antrean produksi lantai kerja real-time via WebSocket.",
       "tags": ["Laravel", "Vue.js", "Inertia.js", "Tailwind CSS", "Laravel Reverb (WebSockets)", "PWA", "Playwright", "MySQL"],
@@ -132,7 +152,17 @@
         "situation": "Operasional proyek promosi dan penugasan tim lapangan (SPG/Field Officers) menghadapi kendala perhitungan margin laba proyek manual, dokumentasi foto lapangan tanpa verifikasi lokasi, dan alur penagihan klien yang lambat.",
         "task": "Membangun platform manajemen operasional dan finansial proyek terpadu mulai dari siklus order, form survei lapangan, hingga penerbitan Berita Acara (BAPP).",
         "action": "Merancang kalkulator penawaran Bill of Quantities (BQ) dinamis dengan estimasi net profit margin otomatis, formulir digital staf lapangan yang tersinkronisasi real-time ke Google Sheets via background job queue, laporan foto ber-watermark koordinat GPS & timestamp, modul invoicing termin, dan pembagian hak akses pengguna multi-divisi (RBAC).",
-        "result": "Kepastian margin keuntungan proyek secara presisi sebelum eksekusi, pelaporan aktivitas lapangan transparan anti-titip foto, dan percepatan siklus penagihan pembayaran resmi ke klien."
+        "result": "Kepastian margin keuntungan proyek secara presisi sebelum eksekusi, pelaporan aktivitas lapangan transparan anti-titip foto, dan percepatan siklus penagihan pembayaran resmi ke klien.",
+        "en": {
+          "title": "Nastiti Utama Mandiri — Operations & Financial Management Platform",
+          "role": "Full Stack Web Developer",
+          "company": "CV NASTITI UTAMA MANDIRI",
+          "period": "Jan 2026 – Jul 2026",
+          "situation": "Field promotional operations and field officer deployments suffered from manual net-margin calculations, unverifiable paper reporting, and delayed client invoicing.",
+          "task": "Engineered an operations and financial management platform covering the complete project lifecycle from order processing to formal handover certificates (BAPP).",
+          "action": "Built a dynamic Bill of Quantities (BQ) pricing engine with automated net margin forecasting, digital field forms synchronizing in real time to Google Sheets via background queues, GPS/timestamp-watermarked photo reporting, client invoicing with tax numbers, and multi-division RBAC security.",
+          "result": "Guaranteed project profitability margins prior to execution, ensured fraud-proof field accountability, and accelerated official client payment cycles."
+        }
       },
       "description": "Platform manajemen proyek dan operasional terpadu yang mencakup pengelolaan siklus pesanan, penugasan tim lapangan, otomatisasi formulir digital tersinkronisasi real-time ke Google Sheets, kalkulasi biaya (BQ) dan estimasi margin laba bersih otomatis, penagihan klien (invoicing) dengan penerbitan Berita Acara (BAPP), serta proteksi hak akses pengguna multi-divisi.",
       "tags": ["Laravel", "React 18", "Inertia.js", "Vite", "Tailwind CSS", "Google Sheets API", "RBAC", "Invoicing & BAPP"],
@@ -152,7 +182,17 @@
         "situation": "Studio software house dan SaaS Nata Code membutuhkan platform digital resmi bertaraf internasional untuk showcase produk dan penawaran layanan software kelas enterprise.",
         "task": "Merancang dan membangun platform digital resmi dengan desain sistem modular, interaktivitas visual tingkat tinggi, dan navigasi aplikasi tanpa jeda.",
         "action": "Membangun arsitektur Single Page Application (SPA) berbasis Laravel dan React 18 / Inertia.js, mengimplementasikan visual 3D interaktif Three.js, smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi mikro-animasi dengan GSAP dan Framer Motion, serta token arsitektur desain Tailwind CSS & Radix UI.",
-        "result": "Tampilan platform agensi modern berkecepatan tinggi dengan navigasi SPA instan dan pengalaman visual interaktif 3D yang memikat calon klien enterprise."
+        "result": "Tampilan platform agensi modern berkecepatan tinggi dengan navigasi SPA instan dan pengalaman visual interaktif 3D yang memikat calon klien enterprise.",
+        "en": {
+          "title": "Nata Code — Creative Agency & Interactive Platform",
+          "role": "Full Stack Developer",
+          "company": "NATA CODE",
+          "period": "Jul 2026 – Present",
+          "situation": "Software house and SaaS studio Nata Code required an international-standard digital platform and modular design system to showcase enterprise software solutions.",
+          "task": "Designed and developed the agency's official web presence and design system featuring high-end visual interactivity and zero-latency page navigation.",
+          "action": "Architected a high-performance Single Page Application (SPA) with Laravel and React 18 / Inertia.js, integrated interactive 3D visual assets with Three.js, smooth scrolling via Locomotive Scroll, micro-interactions with GSAP and Framer Motion, and design tokens using Tailwind CSS and Radix UI.",
+          "result": "Delivered an award-tier agency web experience with seamless SPA transitions, optimal load speeds, and compelling 3D interactivity for enterprise prospect conversion."
+        }
       },
       "description": "Platform digital resmi studio software house & SaaS Nata Code berstandar agensi internasional. Menampilkan interaksi visual 3D interaktif berbasis Three.js, smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi responsif dengan GSAP, dan arsitektur desain sistem modular.",
       "tags": ["Laravel", "React 18", "Inertia.js", "GSAP", "Three.js", "Locomotive Scroll", "Tailwind CSS", "Radix UI"],
