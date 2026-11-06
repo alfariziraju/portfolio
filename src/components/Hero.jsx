@@ -22,7 +22,7 @@ export default function Hero({ profile }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-8 sm:mb-12"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>PORTFOLIO EDITION 2024</span>
+            <span>PORTFOLIO</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase hidden sm:block">

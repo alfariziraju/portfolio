@@ -38,15 +38,10 @@ export default function Navbar({ profile }) {
           className="flex items-center gap-2.5 text-white tracking-wider text-xs sm:text-sm font-semibold uppercase group"
         >
           <span>{profile?.name ? profile.name.toUpperCase() : "RADJU ALFARIZI"}</span>
-          <span className="text-[#737373] text-[11px] font-normal tracking-widest hidden sm:inline">
-            / STUDIO
-          </span>
         </a>
 
         {/* Center: Metadata / Status */}
         <div className="hidden lg:flex items-center gap-3 text-xs tracking-widest uppercase text-[#8f8f8f] font-mono">
-          <span>EST — 2024</span>
-          <span className="text-[#383838]">|</span>
           <span className="text-slate-300">AVAILABLE FOR WORK</span>
         </div>
 

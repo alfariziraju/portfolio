@@ -42,8 +42,8 @@ export default function About({ profile }) {
 
             <div className="pt-4 border-t border-[#1c1c1c] space-y-3 font-mono text-xs">
               <div className="flex justify-between py-1 border-b border-[#1c1c1c]">
-                <span className="text-[#737373]">ESTABLISHED</span>
-                <span className="text-slate-300">2024 / INDONESIA</span>
+                <span className="text-[#737373]">LOCATION</span>
+                <span className="text-slate-300">SEMARANG / INDONESIA</span>
               </div>
               <div className="flex justify-between py-1 border-b border-[#1c1c1c]">
                 <span className="text-[#737373]">CORE SPECIALTY</span>
