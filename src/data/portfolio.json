@@ -61,7 +61,7 @@
   "projects": [
     {
       "id": "sim-keuangan-man-h2h",
-      "title": "SIM Keuangan Madrasah — School Financial ERP & Banking H2H Integration",
+      "title": "SIM Keuangan MAN — School Financial ERP & Banking H2H Integration",
       "category": "Fullstack",
       "images": [
         {
@@ -85,8 +85,8 @@
           "caption": "Portal Bento Siswa & Pembayaran Tagihan Online"
         }
       ],
-      "description": "Sistem digitalisasi pembayaran tagihan terintegrasi langsung dengan Bank Mitra via Virtual Account Host-to-Host (H2H). Membangun webhook receiver dengan bank-grade security (IP whitelisting & anti-replay protection), pencatatan jurnal akuntansi otomatis, dan pemantauan status pelunasan real-time via Server-Sent Events (SSE).",
-      "tags": ["PHP", "Laravel", "Payment Gateway", "H2H Banking", "Webhook Security", "SSE", "SQL"],
+      "description": "Sistem Informasi Manajemen Keuangan Madrasah Aliyah Negeri (MAN) dengan integrasi langsung Host-to-Host (H2H) dengan Bank Mitra. Menyediakan Virtual Account otomatis dengan webhook perbankan terproteksi, pencatatan jurnal akuntansi otomatis (auto-journaling), rekonsiliasi rekening koran, dan penyusunan RKA bulanan.",
+      "tags": ["PHP", "Laravel", "Host-to-Host (H2H) Banking API", "Virtual Account (VA)", "Webhook Security", "MySQL", "Alpine.js", "SSE", "DomPDF", "Telegram Bot API"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
@@ -94,10 +94,10 @@
     },
     {
       "id": "acrylico-manufacturing-erp",
-      "title": "Acrylico ERP — Manufacturing & Shop Floor Management",
+      "title": "Acrylico ERP — Enterprise Resource Planning & Shop Floor Management",
       "category": "Fullstack",
-      "description": "Sistem ERP manufaktur fabrikasi akrilik dan signage dengan portal karyawan PWA offline-first (absensi GPS geofencing & selfie biometrik), otomasi payroll & kasbon berjenjang, pelacakan lantai kerja real-time via WebSocket (Laravel Reverb), dan pengujian otomatis Playwright.",
-      "tags": ["Laravel", "Vue.js", "Inertia.js", "PWA", "WebSockets", "Playwright", "MySQL"],
+      "description": "Sistem ERP modular dan Shop Floor Tracking khusus industri manufaktur fabrikasi akrilik dan signage. Dilengkapi portal karyawan PWA mobile (absensi GPS geofence, selfie biometrik, offline-first), otomasi penggajian & kasbon, serta sinkronisasi antrean produksi lantai kerja real-time via WebSocket.",
+      "tags": ["Laravel", "Vue.js", "Inertia.js", "Tailwind CSS", "Laravel Reverb (WebSockets)", "PWA", "Playwright", "MySQL"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
@@ -105,14 +105,25 @@
     },
     {
       "id": "project-pricing-erp-workflow",
-      "title": "Project Operations & Smart Pricing ERP (CV Nastiti Utama Mandiri)",
+      "title": "Nastiti Utama Mandiri — Operations & Financial Management Platform",
       "category": "Fullstack",
-      "description": "Platform manajemen operasional alur order bisnis dengan Bill of Quantities (BQ) dinamis, kalkulator harga otomatis dan estimasi margin laba bersih proyek, penagihan klien terpadu (BAPP & invoice termin), dan hak akses multi-divisi (RBAC).",
-      "tags": ["Laravel", "React.js", "Inertia.js", "Dynamic BQ", "Margin Financial", "RBAC", "SQL"],
+      "description": "Platform manajemen proyek dan operasional terpadu yang mencakup pengelolaan siklus pesanan, penugasan tim lapangan, otomatisasi formulir digital tersinkronisasi real-time ke Google Sheets, kalkulasi biaya (BQ) dan estimasi margin laba bersih otomatis, penagihan klien (invoicing) dengan penerbitan Berita Acara (BAPP), serta proteksi hak akses pengguna multi-divisi.",
+      "tags": ["Laravel", "React 18", "Inertia.js", "Vite", "Tailwind CSS", "Google Sheets API", "RBAC", "Invoicing & BAPP"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
       "stats": "Dynamic BQ & Realtime Project Net Margin"
+    },
+    {
+      "id": "nata-code-studio-platform",
+      "title": "Nata Code — Creative Agency & Interactive Platform",
+      "category": "Fullstack",
+      "description": "Platform digital resmi studio software house & SaaS Nata Code berstandar agensi internasional. Menampilkan interaksi visual 3D interaktif berbasis Three.js, smooth scrolling dinamis (Locomotive Scroll), mikro-interaksi responsif dengan GSAP, dan arsitektur desain sistem modular.",
+      "tags": ["Laravel", "React 18", "Inertia.js", "GSAP", "Three.js", "Locomotive Scroll", "Tailwind CSS", "Radix UI"],
+      "demoUrl": "https://github.com/alfariziraju",
+      "repoUrl": "https://github.com/alfariziraju",
+      "isFeatured": true,
+      "stats": "Interactive 3D Three.js & Locomotive Scroll"
     },
     {
       "id": "field-survey-gps-pwa",
@@ -122,19 +133,8 @@
       "tags": ["React.js", "PWA", "Google Sheets API", "GPS Watermark", "Offline Queue"],
       "demoUrl": "https://github.com/alfariziraju",
       "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": true,
+      "isFeatured": false,
       "stats": "Offline Sync & Real-Time Google Sheets API"
-    },
-    {
-      "id": "nata-code-studio-platform",
-      "title": "Nata Code — Creative Agency & Interactive 3D Web",
-      "category": "Frontend",
-      "description": "Platform digital studio software house dan desain sistem modular berstandar agensi internasional dengan smooth scrolling (Locomotive Scroll), elemen visual interaktif 3D berbasis Three.js, dan animasi performa tinggi GSAP.",
-      "tags": ["React.js", "Laravel", "Inertia.js", "Three.js", "GSAP", "Locomotive Scroll", "Tailwind CSS"],
-      "demoUrl": "https://github.com/alfariziraju",
-      "repoUrl": "https://github.com/alfariziraju",
-      "isFeatured": true,
-      "stats": "Interactive 3D Three.js & Locomotive Scroll"
     },
     {
       "id": "sistem-keuangan-bku-madrasah",
