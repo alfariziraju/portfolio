@@ -32,11 +32,11 @@ export default function Projects({ initialProjects = [] }) {
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>02 / SELECTED WORKS</span>
+            <span>02 / PRODUCTION WORKS &amp; EXPERIENCE</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            PRODUCTION SYSTEMS
+            STAR METHOD CASE STUDIES
           </div>
         </motion.div>
 
@@ -50,10 +50,10 @@ export default function Projects({ initialProjects = [] }) {
             className="lg:col-span-8"
           >
             <h2 className="text-4xl sm:text-6xl font-medium tracking-tight text-white uppercase leading-[0.95] mb-4">
-              Featured Projects
+              Featured Projects &amp; Experience
             </h2>
             <p className="text-sm sm:text-base text-[#8f8f8f] max-w-2xl leading-relaxed">
-              Koleksi sistem web, aplikasi enterprise, dan arsitektur backend yang telah saya kembangkan dari fase perancangan hingga implementasi siap produksi.
+              Arsitektur sistem nyata dan pengalaman profesional terstruktur dengan metode STAR (Situation, Task, Action, Result) dari fase perancangan hingga implementasi siap produksi.
             </p>
           </motion.div>
 
@@ -148,6 +148,21 @@ export default function Projects({ initialProjects = [] }) {
                     </div>
                   </div>
 
+                  {/* Role & Company Experience Meta */}
+                  {project.company && (
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-2">
+                      <span className="text-white font-medium">{project.role}</span>
+                      <span className="text-[#444]">—</span>
+                      <span className="text-[#aaa] uppercase tracking-wider">{project.company}</span>
+                      {project.period && (
+                        <>
+                          <span className="text-[#444]">|</span>
+                          <span className="text-[#888]">{project.period}</span>
+                        </>
+                      )}
+                    </div>
+                  )}
+
                   {/* Title */}
                   <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-tight group-hover:text-slate-200 transition-colors mb-3">
                     {project.title}
@@ -165,10 +180,40 @@ export default function Projects({ initialProjects = [] }) {
                     />
                   )}
 
-                  {/* Description */}
-                  <p className="text-sm text-[#a3a3a3] leading-relaxed mb-6 max-w-2xl">
-                    {project.description}
-                  </p>
+                  {/* STAR Method Case Breakdown */}
+                  {project.star ? (
+                    <div className="my-5 space-y-2.5 text-xs font-mono border-y border-[#1c1c1c] py-4 bg-black/20 -mx-2 px-2 rounded-lg">
+                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
+                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-[#666] font-semibold">
+                          [SITUATION &amp; TASK]
+                        </span>
+                        <p className="sm:col-span-9 font-sans text-xs text-[#999] leading-relaxed">
+                          {project.star.situation} {project.star.task}
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
+                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-slate-300 font-semibold">
+                          [ACTION / ARCH]
+                        </span>
+                        <p className="sm:col-span-9 font-sans text-xs text-slate-300 leading-relaxed">
+                          {project.star.action}
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-3 items-baseline">
+                        <span className="sm:col-span-3 text-[10px] uppercase tracking-widest text-emerald-400 font-semibold">
+                          [RESULT / IMPACT]
+                        </span>
+                        <p className="sm:col-span-9 font-sans text-xs text-emerald-100/90 leading-relaxed">
+                          {project.star.result}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    /* Default Description */
+                    <p className="text-sm text-[#a3a3a3] leading-relaxed mb-6 max-w-2xl">
+                      {project.description}
+                    </p>
+                  )}
                 </div>
 
                 {/* Card Bottom: Stats & Tags */}

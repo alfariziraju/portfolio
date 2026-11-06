@@ -21,11 +21,11 @@ export default function Experience({
           className="flex items-center justify-between border-b border-[#242424] pb-4 mb-12 sm:mb-16"
         >
           <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            <span>04 / CAREER &amp; EDUCATION</span>
+            <span>04 / ACADEMIC &amp; CREDENTIALS</span>
           </div>
 
           <div className="text-[11px] font-mono tracking-widest text-[#8f8f8f] uppercase">
-            CHRONOLOGICAL RECORD
+            CERTIFIED FOUNDATIONS
           </div>
         </motion.div>
 
@@ -38,46 +38,12 @@ export default function Experience({
           className="mb-16 max-w-2xl"
         >
           <h2 className="text-4xl sm:text-6xl font-medium tracking-tight text-white uppercase leading-[0.95] mb-4">
-            Experience History
+            Education &amp; Credentials
           </h2>
           <p className="text-sm sm:text-base text-[#8f8f8f] leading-relaxed">
-            Perjalanan profesional dalam merancang arsitektur sistem nyata di institusi pendidikan dan perusahaan.
+            Fondasi akademik teknik informatika dan sertifikasi rekayasa perangkat lunak berstandar industri.
           </p>
         </motion.div>
-
-        {/* Work Experiences Timeline Rows */}
-        <div className="divide-y divide-[#242424] border-y border-[#242424] mb-20">
-          {experiences.map((exp, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ ...transition, delay: idx * 0.1 }}
-              className="py-8 sm:py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group hover:bg-[#121212]/40 px-3 sm:px-5 -mx-3 sm:-mx-5 rounded-xl transition-colors duration-300"
-            >
-              {/* Period */}
-              <div className="md:col-span-3 font-mono text-xs text-[#8f8f8f] uppercase tracking-wider group-hover:text-slate-300 transition-colors">
-                {exp.period}
-              </div>
-
-              {/* Role & Company */}
-              <div className="md:col-span-4 space-y-1">
-                <h3 className="text-xl font-medium text-white tracking-tight group-hover:translate-x-1 transition-transform duration-300">
-                  {exp.role}
-                </h3>
-                <p className="text-xs font-mono uppercase tracking-wider text-[#cfcfcf]">
-                  {exp.company}
-                </p>
-              </div>
-
-              {/* Description */}
-              <div className="md:col-span-5 text-sm text-[#8f8f8f] leading-relaxed group-hover:text-slate-300 transition-colors">
-                {exp.description}
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Education & Certifications Split Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-8 border-t border-[#242424]">

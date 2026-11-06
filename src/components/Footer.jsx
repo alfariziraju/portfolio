@@ -10,8 +10,9 @@ export default function Footer({ profile }) {
   const navLinks = [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
+    { label: "Projects & Exp", href: "#projects" },
     { label: "Capabilities", href: "#skills" },
+    { label: "Education", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ];
 
