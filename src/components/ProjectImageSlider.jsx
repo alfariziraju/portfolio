@@ -69,13 +69,13 @@ export default function ProjectImageSlider({ images = [], title = "" }) {
           )}
         </div>
 
-        {/* Screenshot Frame with Navigation Overlays - Compact & Cinematic Height */}
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] max-h-[340px] overflow-hidden bg-black/60 select-none">
+        {/* Screenshot Frame with Navigation Overlays - Adaptive Contain & Center */}
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] max-h-[380px] overflow-hidden bg-black/80 flex items-center justify-center select-none">
           <img
             key={current.url}
             src={current.url}
             alt={current.caption || title}
-            className="w-full h-full object-cover object-top opacity-90 transition-all duration-500 ease-out group-hover/slider:opacity-100 group-hover/slider:scale-[1.01]"
+            className="w-full h-full object-contain opacity-95 transition-all duration-300 ease-out group-hover/slider:opacity-100"
             loading="lazy"
           />
 

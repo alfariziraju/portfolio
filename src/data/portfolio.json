@@ -118,28 +118,62 @@
       "company": "NATACODE (ACRYLICO ERP)",
       "period": "Agu 2026 – Nov 2026",
       "category": "Fullstack",
+      "images": [
+        {
+          "url": "/images/projects/acrylico/shopfloor-kanban.png",
+          "caption": "Ruang Kendali Lantai Fabrikasi (Shop Floor Kanban WebSocket Reverb)"
+        },
+        {
+          "url": "/images/projects/acrylico/boq-variance-analysis.png",
+          "caption": "Analisis Rincian BOQ Dinamis & Estimasi Realisasi Margin"
+        },
+        {
+          "url": "/images/projects/acrylico/invoices-dp-gate.png",
+          "caption": "Manajemen Invoicing & Gerbang Kunci Produksi DP 50%"
+        },
+        {
+          "url": "/images/projects/acrylico/pwa-presensi-geofence.png",
+          "caption": "Portal Karyawan PWA — Presensi Mandiri GPS Geofencing"
+        },
+        {
+          "url": "/images/projects/acrylico/pwa-proyek-spk.png",
+          "caption": "Portal Karyawan PWA — Papan Tugas SPK Fabrikasi & Tiket Servis"
+        },
+        {
+          "url": "/images/projects/acrylico/pwa-slip-gaji.png",
+          "caption": "Portal Karyawan PWA — Histori Slip Gaji & Tracking Cicilan Kasbon"
+        },
+        {
+          "url": "/images/projects/acrylico/pwa-cuti-izin.png",
+          "caption": "Portal Karyawan PWA — Pengajuan Cuti & Pemantauan Kuota Tahunan"
+        },
+        {
+          "url": "/images/projects/acrylico/pwa-riwayat-telemetry.png",
+          "caption": "Portal Karyawan PWA — Grafik Log Jam Kerja & Telemetri Kehadiran"
+        }
+      ],
       "star": {
-        "situation": "Workshop manufaktur fabrikasi akrilik dan signage memerlukan digitalisasi presensi karyawan pabrik yang akurat serta pelacakan antrean order lantai produksi yang transparan secara real-time.",
-        "task": "Memimpin rancang bangun sistem ERP manufaktur dan modul Shop Floor Tracking modular berbasis web dan mobile.",
-        "action": "Membangun portal karyawan PWA offline-first dengan presensi GPS geofencing radius ketat dan verifikasi selfie biometrik, otomasi payroll berjenjang dengan potongan kasbon/lembur, sinkronisasi antrean kerja lantai produksi via WebSocket (Laravel Reverb), dan pengujian E2E otomatis berbasis Playwright.",
-        "result": "Otomasi total rekap penggajian bebas salah hitung, eliminasi kecurangan absensi berkat geofencing & biometrik, serta visibilitas progres pengerjaan signage secara live antar-stasiun bengkel.",
+        "situation": "Workshop manufaktur fabrikasi akrilik dan signage memerlukan sistem ganda: pengawasan lantai produksi real-time untuk manajemen dan portal mobile offline-first bagi ratusan teknisi bengkel.",
+        "task": "Memimpin rancang bangun sistem Enterprise Resource Planning (ERP) manufaktur dan modul Shop Floor Tracking terintegrasi web desktop dan PWA mobile.",
+        "action": "Merancang konsol Ruang Kendali berarsitektur WebSocket (Laravel Reverb), gerbang penguncian produksi DP 50%, kalkulator BOQ material dinamis komparasi rencana vs aktual, serta portal PWA offline-first lengkap 5 menu mandiri (presensi GPS geofencing, SPK, slip gaji, cuti, dan riwayat jam kerja).",
+        "result": "Otomasi total rekap penggajian bebas salah hitung, eliminasi kecurangan absensi berkat geofencing, transparansi antrean lantai produksi secara live ke TV bengkel, dan kontrol anggaran material presisi.",
         "en": {
           "title": "Acrylico ERP — Enterprise Resource Planning & Shop Floor Management",
           "role": "Full Stack Developer",
           "company": "NATACODE (ACRYLICO ERP)",
           "period": "Aug 2026 – Nov 2026",
-          "situation": "An acrylic and signage manufacturing workshop needed automated shop-floor tracking and fraud-proof worker attendance directly connected with payroll calculations.",
-          "task": "Led full-cycle design and development of an Enterprise Resource Planning (ERP) platform and real-time shop floor production tracking system.",
-          "action": "Built an offline-first mobile PWA for employee attendance with high-precision GPS geofencing and selfie photo verification, automated multi-tier payroll with overtime and cash advance deductions, real-time shop floor order tracking via WebSockets (Laravel Reverb), and automated E2E tests with Playwright.",
-          "result": "Fully automated payroll processing eliminating calculation errors, prevented attendance fraud with biometric/geofencing verification, and provided live production queue visibility across workshop stations."
+          "situation": "An acrylic and signage manufacturing workshop needed a dual-tier system: real-time shop floor production tracking for management and an offline-first mobile portal for field workers.",
+          "task": "Led full-cycle design and development of an Enterprise Resource Planning (ERP) platform and real-time shop floor production tracking system across desktop and mobile PWA.",
+          "action": "Engineered a Shop Floor Kanban console powered by WebSockets (Laravel Reverb), automated 50% down-payment production gates, dynamic Bill of Quantities (BOQ) cost vs actual variance engine, and a 5-module offline-first PWA (GPS geofencing punch, SPK orders, salary slip, leave requests, and telemetry history).",
+          "result": "Automated payroll processing eliminating calculation errors, prevented attendance fraud with geofencing, provided live production queue visibility across workshop TV monitors, and ensured precise project material profitability."
         }
       },
-      "description": "Sistem ERP modular dan Shop Floor Tracking khusus industri manufaktur fabrikasi akrilik dan signage. Dilengkapi portal karyawan PWA mobile (absensi GPS geofence, selfie biometrik, offline-first), otomasi penggajian & kasbon, serta sinkronisasi antrean produksi lantai kerja real-time via WebSocket.",
-      "tags": ["Laravel", "Vue.js", "Inertia.js", "Tailwind CSS", "Laravel Reverb (WebSockets)", "PWA", "Playwright", "MySQL"],
-      "demoUrl": "https://github.com/alfariziraju",
+      "description": "Sistem ERP modular dan Shop Floor Tracking khusus industri manufaktur fabrikasi akrilik dan signage. Mengintegrasikan konsol desktop pengawasan bengkel (Shop Floor Kanban WebSocket Reverb & BOQ Dinamis) dan portal karyawan PWA mobile (absensi GPS geofence, SPK, slip gaji, dan cuti).",
+      "tags": ["Laravel 13", "Vue.js 3", "Inertia.js", "Tailwind CSS", "Laravel Reverb (WebSockets)", "PWA Offline-First", "Dynamic BOQ", "MySQL"],
+      "demoUrl": "https://acrylico.id",
       "repoUrl": "https://github.com/alfariziraju",
       "isFeatured": true,
-      "stats": "PWA Offline-First & Live Shop Floor WebSocket"
+      "stats": "Desktop Shop Floor Reverb & 5 PWA Mobile Modules"
     },
     {
       "id": "project-pricing-erp-workflow",
